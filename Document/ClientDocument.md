@@ -133,18 +133,18 @@ mOpeConfig = new OperateCenterConfig.Builder(this)
 	.build();
 mOpeCenter.setConfig(mOpeConfig);
 mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
-        //初始化完成
+	//初始化完成
 	@Override
 	public void onInitFinished(boolean isLogin, User userInfo)
 	{
-        //初始化完成后操作（例如检查当前登录状态）
+		//初始化完成后操作（例如检查当前登录状态）
 	}
 	    
         //用户通过悬浮窗-个人中心-注销成功时SDK调用该回调
 	@Override
 	public void onUserAccountLogout()
 	{
-        //游戏注销逻辑
+		//游戏注销逻辑
 	}
 });
 ```
@@ -214,7 +214,7 @@ mOpeCenter.logout(new OnLogoutFinishedListener() {
 	@Override
 	public void onLogoutFinished(boolean success, int resultCode)
 	{
-        //用户注销后的游戏逻辑
+        	//用户注销后的游戏逻辑
 	}
 });
 ```
