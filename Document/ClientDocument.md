@@ -165,7 +165,7 @@ mOpeCenter.setSupportExcess(support);
 ```java
 mOpeCenter.setSwitchUserAccountListener(new OnSwitchUserAccountListener()
 {
-    public void onSwitchUserAccountListener(User userInfo){
+    public void onSwitchUserAccountFinished(User userInfo){
         //游戏切换账号逻辑
     }
 });
