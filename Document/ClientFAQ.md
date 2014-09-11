@@ -75,5 +75,8 @@ A:我们sdk支持横竖屏配置， 需要AndroidManifest.xml 设置screenOrient
 Q:客户端哪个参数是可以放服务器id？    
 A:setServerId
 
+Q:有没有虚拟游币给测试充值？
+A:没法申请游币进行测试。一般都是两边各自真实测试充值的。
+
 
 
