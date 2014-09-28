@@ -6,7 +6,7 @@
     android:background="@drawable/m4399_ope_usercenter_action_item_bg"
     android:orientation="horizontal"
     android:paddingLeft="20dp"
-    android:paddingRight="17dp" >
+    android:paddingRight="20dp" >
 
     <TextView
         android:id="@+id/usercenter_action_item_gray_title"

@@ -35,11 +35,11 @@
                 android:id="@+id/userinfo_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textColor="@color/m4399_ope_usercenter_black"
                 android:textSize="@dimen/m4399_ope_usercenter_nickname_font_size"
-                android:textStyle="bold"
-                android:maxLines="1"
-                android:ellipsize="end" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
@@ -55,11 +55,10 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal" >
 
-             <cn.m4399.recharge.ui.widget.InquiryBar
+            <cn.m4399.recharge.ui.widget.InquiryBar
                 android:id="@+id/inquiry_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp" />
-
         </LinearLayout>
     </LinearLayout>
 
@@ -70,8 +69,8 @@
         android:layout_gravity="center_vertical"
         android:background="@drawable/m4399_ope_btn_gray_selector"
         android:paddingBottom="10dp"
-        android:paddingLeft="17dp"
-        android:paddingRight="17dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:paddingTop="10dp"
         android:text="@string/m4399_ope_usercenter_swith_user"
         android:textSize="16sp" />

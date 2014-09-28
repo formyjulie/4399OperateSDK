@@ -74,6 +74,7 @@
     <string name="m4399_rec_youbi_not_sufficient">可用游币余额不足，建议选择其它支付方式进行充值</string>
     
     <!-- For progress dialog -->
+    <string name="m4399_rec_on_fetching_config">正在获取充值配置，请稍候</string>
     <string name="m4399_rec_fetching_youbi_balance">正在查询游币余额</string>
     <string name="m4399_rec_exchanging_youbi">正在兑换游币</string>
     <string name="m4399_rec_on_loading">正在加载，请稍候 </string>
@@ -96,6 +97,7 @@
     
     <!-- For pay result -->
     <string name="m4399_rec_result_no_network">网络请求失败, 请检查网络状况</string>
+    <string name="m4399_rec_result_access_rec_config_error">获取充值配置失败，建议退出游戏重新加载</string>
     <string name="m4399_rec_result_faile_fetch_online_date">获取网络数据失败，请检查网络状况</string>
     <string name="m4399_rec_result_success">充值成功</string>
     <string name="m4399_rec_result_on_process">充值处理中，请于一分钟后在游戏内查询。</string>

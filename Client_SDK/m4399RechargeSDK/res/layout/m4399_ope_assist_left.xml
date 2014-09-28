@@ -4,19 +4,11 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-    <FrameLayout
-        android:id="@+id/pop_window_logo_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <ImageView
-            android:id="@+id/pop_window_logo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/m4399_ope_pop_logo" 
-            android:padding="5dp"/>
-    </FrameLayout>
-
-    <include layout="@layout/m4399_ope_assist_expand"/>
+    <ImageView
+        android:id="@+id/pop_window_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="5dp"
+        android:src="@drawable/m4399_ope_pop_logo_one_normal" />
 
 </cn.m4399.operate.ui.widget.SDKPopContentView>

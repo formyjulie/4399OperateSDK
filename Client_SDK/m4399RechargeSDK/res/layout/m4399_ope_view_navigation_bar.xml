@@ -23,6 +23,7 @@
         android:textColor="@color/m4399_ope_usercenter_white"
         android:paddingLeft="5dp"
         android:id="@+id/navigation_title"/>
+    
     <LinearLayout 
         android:layout_width="wrap_content"
     	android:layout_height="match_parent"
@@ -30,6 +31,21 @@
     	android:id="@+id/navigation_right_view_group"
     	android:layout_gravity="center_vertical"
     	android:gravity="center_vertical"
-    	></LinearLayout>
+    	>
+
+        <Button
+            android:id="@+id/back_to_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/m4399_ope_nav_btn_selector"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="16sp"
+            android:textColor="#FF8F5005"
+            android:text="@string/m4399_ope_usercenter_back_to_game" />
+
+    </LinearLayout>
 
 </LinearLayout>

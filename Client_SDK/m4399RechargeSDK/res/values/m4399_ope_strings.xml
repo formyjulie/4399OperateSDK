@@ -21,6 +21,7 @@
 	
 	<!-- For login and account switcher activity -->
 	<string name="m4399_ope_usercenter_timeout_warning">操作超时，请重试。</string>
+	<string name="m4399_ope_usercenter_access_token_expired">登录状态已过期，请重新登录后再尝试.</string>
 	<string name="m4399_ope_login_title">账号登录</string>
 	<string name="m4399_ope_close">关闭</string>
 	<string name="m4399_ope_confirm">确认</string>
@@ -65,11 +66,12 @@
     <string name="m4399_ope_update_result_download_success">下载APK成功</string>
     <string name="m4399_ope_update_result_check_error">由于未知原因导致检查版本失败</string>
     <string name="m4399_ope_update_result_download_error">由于未知原因导致下载失败</string>
+    <string name="m4399_ope_update_force_hint">再次点击，退出游戏</string>
     
     <!-- For pre-pay -->
     <string name="m4399_ope_requesting_recharge">正在生成充值订单</string>
     <string name="m4399_ope_pay_failed_init_error">初始化充值中心失败</string>
-    <string name="m4399_ope_pay_failed_fetch_token">不能正确获取充值令牌，请检查账号是否在登录中</string>
+    <string name="m4399_ope_pay_failed_fetch_token">请登录游戏后再充值</string>
     <string name="m4399_ope_pay_failed_unknown_error">由于未知原因导致充值失败，请检查网络和是否已经登录成功</string>
     
     <string name="m4399_ope_sdk_unknown_circumstance">未知情况</string>
@@ -77,6 +79,7 @@
     <!--  弹窗界面 -->
     <string name="m4399_ope_pop_circle">游戏圈</string>
     <string name="m4399_ope_pop_circle_warnning_msg">游戏圈由4399游戏盒提供，内含丰富的攻略和游戏礼包，您是否要前往下载？</string>
-    <string name="m4399_ope_pop_user">个人中心</string>
+    <string name="m4399_ope_pop_user">账户</string>
+    <string name="m4399_ope_pop_hide">隐藏</string>
 	
 </resources>

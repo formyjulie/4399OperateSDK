@@ -55,7 +55,7 @@
             android:layout_height="match_parent"
             android:clickable="false"
             android:focusable="false"
-            android:src="@drawable/m4399_ope_sdk_cancel" />
+            android:src="@drawable/m4399_rec_cancel" />
     </LinearLayout>
 
 </LinearLayout>
