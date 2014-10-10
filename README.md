@@ -1,11 +1,12 @@
 4399运营SDK 接入说明
 ==============
 # SDK下载
-* [v2.0.0.6 Beta](https://github.com/4399SDKDev/4399OperateSDK/archive/master.zip)(2014-08-22)
+* [v2.1.0](https://github.com/4399SDKDev/4399OperateSDK/archive/master.zip)(2014-08-22)
 
 # 接入文档
 [Android SDK客户端接入说明文档](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ClientDocument.md)   
-[服务端接入说明文档](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ServerDocument.md)
+[服务端接入说明文档](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ServerDocument.md)  
+[接入中常见问题FAQ](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ClientFAQ.md)
 
 ## 接入须知   
 1. 厂商游戏与4399开始联运合作时，必须接入4399SDK，SDK内容详情查阅上述文档。不得使用4399平台以外的登陆、充值接口。  
