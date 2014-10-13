@@ -135,9 +135,17 @@
                 android:id="@+id/ori_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:text="@string/set_orirentation" />
 
+            <Spinner
+                android:id="@+id/assis_pop_style_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/set_orirentation" />
         </LinearLayout>
     </ScrollView>
 

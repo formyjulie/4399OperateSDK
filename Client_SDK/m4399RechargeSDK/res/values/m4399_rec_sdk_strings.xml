@@ -25,6 +25,7 @@
     <string name="m4399_rec_hotline_liantong"><u>4000600611</u></string>
     <string name="m4399_rec_try_other_payment">其他充值方式</string>
     <string name="m4399_rec_return">其他充值方式</string>
+    <string name="m4399_rec_previous_step">上一步</string>
     
     <!-- For identifying code check dialog -->
     <string name="m4399_rec_cancel">取消</string>
@@ -86,7 +87,10 @@
     <!-- For card serial and password area -->
     <string name="m4399_rec_input_card_serial">请输入充值卡号</string>
     <string name="m4399_rec_input_card_psword">请输入充值密码</string>
+    <string name="m4399_rec_error_order">订单异常</string>
     <string name="m4399_rec_empty_serial_passwd">卡号或密码不能为空，请输入正确卡号和密码</string>
+    <string name="m4399_rec_error_serial">卡号长度有误，请重新核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
+    <string name="m4399_rec_error_psword">密码长度有误，请仔细核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
     
     <!-- For multi-card confirm fragment -->
     <string name="m4399_rec_multi_card_indicator">您已选择了%s充值卡</string>
@@ -116,6 +120,7 @@
     
     <!-- For sms and its confirm fragment -->
     <string name="m4399_rec_sms_send_error">短信发送出错，请检查应用是否被允许发送短信，或使用其他方式充值</string>
+    <string name="m4399_rec_sms_yidong_smsorder_error">使用移动短代充值出错，请稍后再试或使用其他方式充值</string>
     <string name="m4399_rec_sms_good_name">商品名称： %1s</string>
     <string name="m4399_rec_sms_good_price">订单价格：%1s (不含通信费)</string>
     <string name="m4399_rec_sms_hotline">%1s</string>

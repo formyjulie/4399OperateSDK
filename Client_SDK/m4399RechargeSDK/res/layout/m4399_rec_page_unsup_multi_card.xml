@@ -50,13 +50,6 @@
 
         <include
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/m4399_rec_gridview_vspacing"
-            android:layout_marginTop="@dimen/m4399_rec_gridview_vspacing"
-            layout="@layout/m4399_rec_sec_mcard_serial_psword_area" />
-
-        <include
-            android:layout_width="fill_parent"
             android:layout_height="@dimen/m4399_rec_sum_btns_eara_height"
             layout="@layout/m4399_rec_sec_single_btn_area" />
     </LinearLayout>
