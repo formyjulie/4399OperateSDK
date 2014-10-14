@@ -54,7 +54,7 @@ v2.1.0  |   2014-10-14  |   郑旭    |   移除悬浮窗配置接口，移除�
 1. 向4399运营人员提供游戏名称、游戏内货币名称、人民币与游戏币的兑换率
 2. 4399运营人员会提供接入时需要的`GameKey`和`Secrect`。
 3. GameKey为接入客户端SDK时使用，在初始化SDK时传入。请勿将Secrect写入游戏客户端。
-4. GameKey，Secrect同时需要配置在服务端，详见[服务端接口文档](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ServerDocument.md)。
+4. GameKey，Secrect同时需要配置在服务端，详见[服务端接口文档](/Document/ServerDocument.md)。
 
 ## SDK集成流程
 假设现在你的工程目录名字叫project，下面将具体介绍如何将SDK接入project中。
@@ -187,7 +187,7 @@ mOpeCenter.login(MainActivity.this, new OnLoginFinishedListener() {
 });
 ```
 SDK会自动识别用户手机中是否安装了新版的4399游戏盒1.4.1以上版本，如果已安装，自动跳转至游戏盒授权登录。如果未安装，则弹出Web版4399统一登录界面。
-在登录成功后，监听器返回的`User`类型的用户信息中将包含`State`登录凭证，该信息可用于游戏服务端进行[用户信息二次验证](https://github.com/4399SDKDev/4399OperateSDK/blob/master/Document/ServerDocument.md#%E7%99%BB%E5%BD%95%E5%87%AD%E8%AF%81%E9%AA%8C%E8%AF%81%E6%8E%A5%E5%8F%A3)
+在登录成功后，监听器返回的`User`类型的用户信息中将包含`State`登录凭证，该信息可用于游戏服务端进行[用户信息二次验证](/Document/ServerDocument.md#%E7%99%BB%E5%BD%95%E5%87%AD%E8%AF%81%E9%AA%8C%E8%AF%81%E6%8E%A5%E5%8F%A3)
 
 *注：登录后如果未注销，登录状态将一直保持直至登录凭证过期或失效（若用户修改平台账户密码，所有游戏授权凭证将失效，需重新登录）。建议游戏在初始化完成后调用[登录状态查询](#登录状态查询)接口查询用户当前登录状态。*
 
