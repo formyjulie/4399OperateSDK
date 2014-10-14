@@ -41,12 +41,6 @@
 # view AndroidManifest.xml #generated:58
 -keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:64
--keep class com.umpay.huafubao.service.AppUpgradeService { <init>(...); }
-
-# view AndroidManifest.xml #generated:61
--keep class com.umpay.huafubao.ui.BillingActivity { <init>(...); }
-
 # view res/layout/hfb_billingcode.xml #generated:154
 # view res/layout/hfb_padquery.xml #generated:61
 -keep class com.umpay.huafubao.view.CountDownButton { <init>(...); }

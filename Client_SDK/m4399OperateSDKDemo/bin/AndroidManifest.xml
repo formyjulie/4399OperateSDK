@@ -56,12 +56,6 @@
 
         <!-- For Ali SDK -->
         <activity android:name="com.alipay.sdk.app.H5PayActivity" />
-
-        <!-- For YiDong Recharge SDK -->
-        <activity
-            android:name="com.umpay.huafubao.ui.BillingActivity"
-            android:excludeFromRecents="true" />
-        <service android:name="com.umpay.huafubao.service.AppUpgradeService" />
         
         <!-- meta-data android:name="gamekey" android:value="40027"/-->
     </application>
