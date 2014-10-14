@@ -37,6 +37,7 @@
         android:textColor="@android:color/white"
         android:textSize="11sp" />
     <ImageView
+        android:id="@+id/pop_window_line"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:background="@drawable/m4399_ope_pop_line" />
