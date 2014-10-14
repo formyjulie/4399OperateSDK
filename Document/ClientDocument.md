@@ -236,7 +236,7 @@ String[] accounts = mOpeCenter.getCacheAccounts();
 ## 删除缓存用户名
 当需要充缓存中删除已登录用户信息时，可调用该接口，删除历史登录用户信息。（最后一次登录用户无法删除）
 ```java
-mOpeCenterremoveCacheAccount("USER_NAME");
+mOpeCenter.removeCacheAccount("USER_NAME");
 ```
 
 ## 设置用户所在服务器ID
