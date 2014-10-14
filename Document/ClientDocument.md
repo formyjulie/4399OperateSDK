@@ -82,29 +82,36 @@ v2.1.0  |   2014-10-11  |   郑旭    |   移除悬浮窗配置接口，移除�
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
-<activity
-    android:name="cn.m4399.operate.ui.activity.LoginActivity"
-    android:launchMode="singleTask"
-    android:theme="@style/m4399TransparentStyle" />
-<activity
-	android:name="cn.m4399.operate.ui.activity.UserCenterActivity"
-	android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-<activity
-	android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
-	android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-<activity
-    android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
-    android:launchMode="singleTask"
-    android:theme="@style/m4399ActivityTheme" />
-<!--------以下为第三方支付SDK Activity&Service配置------------>
-<activity android:name="com.alipay.sdk.app.H5PayActivity"
-          android:screenOrientation="landscape"/>
-<activity
-	android:name="com.umpay.huafubao.ui.BillingActivity"
-	android:configChanges="landscape"
-	android:excludeFromRecents="true" >
-</activity>
-<service android:name="com.umpay.huafubao.service.AppUpgradeService" />
+        <!-- For 4399 Recharge SDK -->
+        <activity
+            android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/m4399ActivityTheme" />
+
+        <!-- For 4399 Operation SDK -->
+        <activity
+            android:name="cn.m4399.operate.ui.activity.LoginActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/m4399TransparentStyle" />
+        <activity
+            android:name="cn.m4399.operate.ui.activity.UserCenterActivity"
+            android:hardwareAccelerated="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            
+	<!--------以下为第三方支付SDK Activity&Service配置------------>
+        <activity android:name="com.alipay.sdk.app.H5PayActivity" 
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name="com.umpay.huafubao.ui.BillingActivity"
+            android:excludeFromRecents="true"
+            figChanges="landscape"/>
+        <service android:name="com.umpay.huafubao.service.AppUpgradeService" />
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`
 
@@ -116,6 +123,7 @@ v2.1.0  |   2014-10-11  |   郑旭    |   移除悬浮窗配置接口，移除�
 -keep class android.support.v4.** { *; }
 -keep public class * extends android.support.v4.**
 
+-dontwarn com.unipay.**
 -keep class cn.m4399.operate.** {*;}
 -keep class cn.m4399.recharge.** {*;}
 -keepclassmembers class cn.m4399.recharge.R$* {*;}
@@ -128,8 +136,9 @@ mOpeCenter = OperateCenter.getInstance();
 mOpeConfig = new OperateCenterConfig.Builder(this)
 	.setGameKey("GAME_KEY")     //设置GameKey
 	.setDebugEnabled(false)     //设置DEBUG模式,用于接入过程中开关日志输出，发布前必须设置为false或删除该行。默认为false。
-	.setOrientation(OperateCenterConfig.SCREEN_ORIENTATION_LANDSCAPE)  //设置横竖屏方向，默认为横屏
+	.setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //设置横竖屏方向，默认为横屏，现支持横竖屏，和180度旋转
 	.setSupportExcess(true)     //设置服务端是否支持处理超出部分金额，默认为false
+	.setPopLogoStyle(PopLogoStyle.POPLOGOSTYLE_ONE) //设置悬浮窗样式，现有四种可选
 	.build();
 mOpeCenter.setConfig(mOpeConfig);
 mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
