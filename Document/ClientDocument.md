@@ -106,12 +106,6 @@ v2.1.0  |   2014-10-11  |   郑旭    |   移除悬浮窗配置接口，移除�
 	<!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity android:name="com.alipay.sdk.app.H5PayActivity" 
             android:screenOrientation="landscape"/>
-
-        <activity
-            android:name="com.umpay.huafubao.ui.BillingActivity"
-            android:excludeFromRecents="true"
-            figChanges="landscape"/>
-        <service android:name="com.umpay.huafubao.service.AppUpgradeService" />
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`
 
