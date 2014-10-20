@@ -56,7 +56,6 @@ A: 有的，您可用logcat查看日志，快速定位问题。
 		.setDebugEnabled(true)  //打开调试开关
 		.setOrientation(orientation)
 		.setShowPopWindow(true)
-		.setSupportExcess(true)
 		.setGameKey("40027")
 		.setGameName("测试游戏")
 		.build();
