@@ -26,7 +26,7 @@ A: 请分别测试支付宝、短代、游币兑换这3个渠道的充值来定�
   请检查商品名是否超过8个字符
 
 Q: 为什么每次充值显示的渠道都不一样？
-A: 因为在初始化时选择了服务端不支持
+A: 因为SDK会根据传入的充值金额，自动过滤掉不匹配的渠道
 
 Q: 调用接口，出现挂起。挂起log为：Can't create handler inside thread that has not called Looper.prepare();    
 A: 充值接口的调用，必须在UI线程。可以参考：
@@ -67,7 +67,7 @@ A: 有的，您可用logcat查看日志，快速定位问题。
 setDebugEnabled为true后，就能打印出各个逻辑的log。
 
 Q:游戏为横屏，但sdk弹出的界面为竖屏。   
-A:我们sdk支持横竖屏配置， 需要AndroidManifest.xml 设置screenOrientation = "landscape".
+A:我们sdk支持横竖屏配置，使用接口OperateCenterConfig.Builder(this).setOrientation(orientation)设置，也可以在AndroidManifest.xml 中设置screenOrientation = "landscape".但是某些第三方界面，如支付宝界面，只能在AndroidManifest.xml中设置。
 
 Q:客户端哪个参数是可以放服务器id？    
 A:setServerId，请在用户登录后立即设置，如果有选择角色选择服务器的，请在用户选择结束后立即设置。
