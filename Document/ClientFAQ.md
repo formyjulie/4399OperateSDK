@@ -53,15 +53,12 @@ Q: 如何调试，找到问题？
 A: 有的，您可用logcat查看日志，快速定位问题。   
 ```java
 >OperateCenterConfig mOpeConfig = newOperateCenterConfig.Builder(this)
-
-		*.setDebugEnabled(true)*
+		.setDebugEnabled(true)  //打开调试开关
 		.setOrientation(orientation)
-
 		.setShowPopWindow(true)
 		.setSupportExcess(true)
 		.setGameKey("40027")
 		.setGameName("测试游戏")
-
 		.build();
 ```
 setDebugEnabled为true后，就能打印出各个逻辑的log。
