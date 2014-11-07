@@ -161,7 +161,17 @@ mOpeCenter.setSupportExcess(support);
 *注：代码中`MainActivity`为当前Activity.下文的`mOpeCenter`指`OperateCenter`实例，通过`getInstance()`静态方法获得。*  
 
 * 悬浮窗  
-悬浮窗会在用户登录后显示在游戏最前端，用户可通过悬浮窗进入个人中心和游戏圈。个人中心包含切换用户、修改密码、绑定手机、注销、游币余额显示功能。游戏圈依赖1.4.1以上版本的4399游戏盒，当用户有安装4399游戏盒时，会自动弹出本游戏的游戏圈页面。
+悬浮窗会在用户登录后显示在游戏最前端，用户可通过悬浮窗进入个人中心和游戏圈。个人中心包含切换用户、修改密码、绑定手机、注销、游币余额显示功能。游戏圈依赖1.4.1以上版本的4399游戏盒，当用户有安装4399游戏盒时，会自动弹出本游戏的游戏圈页面。  
+
+* 悬浮窗类型  
+游戏开发者可根据游戏的风格自由选择合适的悬浮窗样式，在配置SDK时设置。 
+
+|样式类型|图示|
+|--------|----|
+|PopLogoStyle.POPLOGOSTYLE_ONE|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_one_normal.png" alt="POPLOGOSTYLE_ONE" />|
+|PopLogoStyle.POPLOGOSTYLE_TWO|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_two_normal.png" alt="POPLOGOSTYLE_TWO" />|
+|PopLogoStyle.POPLOGOSTYLE_THREE|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_three_normal.png" alt="POPLOGOSTYLE_THREE" />|
+|PopLogoStyle.POPLOGOSTYLE_FOUR|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_four_normal.png" alt="POPLOGOSTYLE_FOUR" />|
 
 ## 设置切换用户监听器
 用户在个人中心中成功切换账户后，SDK将检测游戏方是否有设置切换用户监听器。如果有，SDK建在切换成功后自动执行游戏方提供的逻辑，如果没有，SDK将强制应用重新启动，以达到切换账号的效果。建议游戏接入本接口以提升用户体验。
