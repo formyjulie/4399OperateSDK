@@ -139,6 +139,7 @@ mOpeConfig = new OperateCenterConfig.Builder(this)
 	.setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //设置横竖屏方向，默认为横屏，现支持横竖屏，和180度旋转
 	.setSupportExcess(true)     //设置服务端是否支持处理超出部分金额，默认为false
 	.setPopLogoStyle(PopLogoStyle.POPLOGOSTYLE_ONE) //设置悬浮窗样式，现有四种可选
+	.setsetPopWinPosition(PopWinPosition.POS_LEFT)	//设置悬浮窗默认显示位置，现有四种可选
 	.build();
 mOpeCenter.setConfig(mOpeConfig);
 mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
@@ -184,6 +185,18 @@ mOpeCenter.setSupportExcess(support);
 |PopLogoStyle.POPLOGOSTYLE_TWO|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_two_normal.png" alt="POPLOGOSTYLE_TWO" />|
 |PopLogoStyle.POPLOGOSTYLE_THREE|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_three_normal.png" alt="POPLOGOSTYLE_THREE" />|
 |PopLogoStyle.POPLOGOSTYLE_FOUR|<img src="/Client_SDK/m4399RechargeSDK/res/drawable-hdpi/m4399_ope_pop_logo_four_normal.png" alt="POPLOGOSTYLE_FOUR" />|
+
+* 悬浮窗默认位置
+游戏开发者可根据游戏的风格自由选择合适的悬浮窗初始化的默认位置，在配置SDK时设置。 
+默认有四种位置 
+|样式类型|位置|
+|--------|----|
+|POS_LEFT（默认位置）| 屏幕左侧|
+|POS_RIGHT|屏幕右侧|
+|POS_TOP|屏幕上侧|
+|POS_BOTTOM|屏幕下边侧|
+
+
 
 ## 设置切换用户监听器
 用户在个人中心中成功切换账户后，SDK将检测游戏方是否有设置切换用户监听器。如果有，SDK建在切换成功后自动执行游戏方提供的逻辑，如果没有，SDK将强制应用重新启动，以达到切换账号的效果。建议游戏接入本接口以提升用户体验。
@@ -245,14 +258,17 @@ mOpeCenter.logout(new OnLogoutFinishedListener() {
 ```
 ## 游戏关闭
 ```java
-// 游戏关闭前，SDK会弹出对话框询问“退出游戏”还是“前往游戏圈”
+// 如果游戏已经配置游戏圈， 则在关闭前，SDK会弹出对话框询问“退出游戏”还是“前往游戏圈”
+// 若没有则不会弹框，但依然会调用onQuitGame方法
 mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
 
 	@Override
 	public void onQuitGame(boolean shouldQuit) {
+		// 如果游戏还没有配置游戏圈，shouldQuit会直接返回true
+		
 		// 点击“退出游戏”时，shouldQuit为true，游戏处理自己的退出业务逻辑
 		// 点击“前往游戏圈”时，shouldQuit为false，SDK会进入游戏圈或者下载
-		// 	游戏圈界面，游戏可以不做处理。
+		// 	游戏盒子界面，游戏可以不做处理。
 	}
 });
 ```
