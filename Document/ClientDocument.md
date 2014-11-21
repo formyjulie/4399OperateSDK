@@ -192,10 +192,10 @@ mOpeCenter.setSupportExcess(support);
 
 |样式类型|位置|
 |--------|----|
-|POS_LEFT（默认位置）| 屏幕左侧|
-|POS_RIGHT|屏幕右侧|
-|POS_TOP|屏幕上侧|
-|POS_BOTTOM|屏幕下侧|
+|PopWinPosition.POS_LEFT（默认位置）| 屏幕左侧|
+|PopWinPosition.POS_RIGHT|屏幕右侧|
+|PopWinPosition.POS_TOP|屏幕上侧|
+|PopWinPosition.POS_BOTTOM|屏幕下侧|
 
 
 
