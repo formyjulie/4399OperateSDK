@@ -195,7 +195,7 @@ mOpeCenter.setSupportExcess(support);
 |POS_LEFT（默认位置）| 屏幕左侧|
 |POS_RIGHT|屏幕右侧|
 |POS_TOP|屏幕上侧|
-|POS_BOTTOM|屏幕下边侧|
+|POS_BOTTOM|屏幕下侧|
 
 
 
