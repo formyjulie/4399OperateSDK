@@ -8,11 +8,14 @@
 当游戏初始化时，SDK将检查后台是否有新版本游戏上线，如果有，则显示更新内容，并提示用户升级。后台在提交新版游戏时自动制作差分包，更新时用户只需下载APK文件中新旧版本有差异的部分。相关更新内容和版本提交事宜，请联系4399相关运营对接人员。全自动更新无需配置和代码接入，SDK在初始化时自动检查更新。
 
 ## 自定义升级界面
-如果游戏需要自定义更新界面，需告知4399运营人员，由后台关闭全自动更新开关。由游戏方自主接入更新接口。
-### 获取版本升级信息
-- 接口  
+如果游戏需要自定义更新界面，需告知4399运营人员，由后台关闭全自动更新开关。由游戏方自主接入更新接口  
 
+### 1.1 获取版本更新
 ```java
+/**
+ * @param MainActivity.this Activity上下文
+ * @param OnCheckFinishedListener 请求结果回调，监听器用于返回请求新版本的信息
+ */
 OperateCenter.getInstance().doCheck(MainActivity.this, new OnCheckFinishedListener() {
 	/**
  	 * 检查新版本后，返回的新版本信息
@@ -24,12 +27,6 @@ OperateCenter.getInstance().doCheck(MainActivity.this, new OnCheckFinishedListen
 	}
 });
 ```
-- 参数  
-
-| 参数值 | 说明 |
-|-------|------	|
-|Context|Activity的上下文|
-|OnCheckFinishedListener|请求结果回调，监听器用于返回请求新版本的信息|
 
 `UpgradeInfo` 封装了检查版本后，显示给用户的必要的信息，其中共有方法：
 
@@ -47,7 +44,7 @@ OperateCenter.getInstance().doCheck(MainActivity.this, new OnCheckFinishedListen
 |haveLocalSrc    |本地是否有已经下载好的更新包，true表示有，false表示没有|
 |isCompel        |判断是否强制升级|
 
-## 1.2 显示检查结果
+### 1.2 显示检查结果
 ```java
 private void showCheckResult(UpgradeInfo info) {
 	int code = info.getResultCode();
@@ -73,8 +70,8 @@ private void showCheckResult(UpgradeInfo info) {
 }
 ```
 
-## 1.3 下载更新包
-### 接口
+### 1.3 下载更新包
+#### 接口
 ```java
 /**
  * @param MainActivity.this Actvity上下文
@@ -110,7 +107,7 @@ OperateCenter.getInstance().doDownload(MainActivity.this, new OnDownloadListener
 		// 下载失败
 	}
 ```
-## 1.4 安装更新包
+### 1.4 安装更新包
 ```java
 /*
  * 下载成功后，或者本地已有下载好的更新包时，可以调用此函数
