@@ -24,11 +24,12 @@ OperateCenter.getInstance().doCheck(MainActivity.this, new OnCheckFinishedListen
 	@Override
 	public void onCheckResponse(UpgradeInfo upgradeInfo) {
 		// 接入者可以在这里显示检查结果，检查结果由UpgradeInfo封装
+		showCheckResult(upgradeInfo);
 	}
 });
 ```
 
-`UpgradeInfo` 封装了检查版本后，显示给用户的必要的信息，其中共有方法：
+`UpgradeInfo` 封装了检查版本后，必要的可显示给用户的信息，其中公有方法：
 
 | 方法名 | 说明 |
 |-------|------|
@@ -54,7 +55,7 @@ private void showCheckResult(UpgradeInfo info) {
 	}  else if (code == UpgradeInfo.APK_CHECK_NEED_UPDATE) {
 		// 有更新内容
 		if (info.haveLocalSrc()) {
-			// 本地已有下载好的更新包，显示“立即更新”
+			// 本地已有下载好的更新包，显示“立即更新”, 即开始安装
 		} else {
 			// 本地没有下载好的更新包
 			if (info.isCompel()) {
