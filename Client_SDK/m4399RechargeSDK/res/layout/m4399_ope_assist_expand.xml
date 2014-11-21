@@ -3,56 +3,27 @@
     android:id="@+id/pop_window_list"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/m4399_ope_pop_bg"
-    android:orientation="horizontal">
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/pop_window_list_user"
+    <LinearLayout
+        android:id="@+id/pop_window_line_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="3dp"
-        android:drawableTop="@drawable/m4399_ope_pop_user_selector"
-        android:gravity="center_horizontal"
-        android:minWidth="60dp"
-        android:padding="5dp"
-        android:text="@string/m4399_ope_pop_user"
-        android:textColor="@android:color/white"
-        android:textSize="11sp" />
+        android:orientation="horizontal" >
+    </LinearLayout>
 
     <ImageView
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/m4399_ope_pop_line" />
+        android:id="@+id/pop_window_interval"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/m4399_ope_pop_line_horizontal" />
 
-    <TextView
-        android:id="@+id/pop_window_list_circle"
+    <LinearLayout
+        android:id="@+id/pop_window_line_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="3dp"
-        android:drawableTop="@drawable/m4399_ope_pop_circle_selector"
-        android:gravity="center_horizontal"
-        android:minWidth="60dp"
-        android:padding="5dp"
-        android:text="@string/m4399_ope_pop_circle"
-        android:textColor="@android:color/white"
-        android:textSize="11sp" />
-    <ImageView
-        android:id="@+id/pop_window_line"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/m4399_ope_pop_line" />
-    
-    <TextView
-        android:id="@+id/pop_window_list_hide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawablePadding="3dp"
-        android:drawableTop="@drawable/m4399_ope_pop_hide_selector"
-        android:gravity="center_horizontal"
-        android:minWidth="60dp"
-        android:padding="5dp"
-        android:text="@string/m4399_ope_pop_hide"
-        android:textColor="@android:color/white"
-        android:textSize="11sp" />
+        android:orientation="horizontal" >
+    </LinearLayout>
 
 </LinearLayout>
+

@@ -20,7 +20,7 @@
     <string name="m4399_rec_input_cash_hint">请输入你要充值的金额</string>
     <string name="m4399_rec_confirm_pay">确认支付</string>
     <string name="m4399_rec_hotline_4399"><u>0592-3214399</u></string>
-    <string name="m4399_rec_hotline_yidong"><u>4006125880</u></string>
+    <string name="m4399_rec_hotline_yidong"><u>0592-3214399</u></string>
     <string name="m4399_rec_hotline_dianxin"><u>4008867686</u></string>
     <string name="m4399_rec_hotline_liantong"><u>4000600611</u></string>
     <string name="m4399_rec_try_other_payment">其他充值方式</string>
@@ -89,7 +89,7 @@
     <string name="m4399_rec_input_card_psword">请输入充值密码</string>
     <string name="m4399_rec_error_order">订单异常</string>
     <string name="m4399_rec_empty_serial_passwd">卡号或密码不能为空，请输入正确卡号和密码</string>
-    <string name="m4399_rec_error_serial">卡号长度有误，请重新核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
+    <string name="m4399_rec_error_serial">卡号长度有误，请仔细核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
     <string name="m4399_rec_error_psword">密码长度有误，请仔细核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
     
     <!-- For multi-card confirm fragment -->
@@ -105,7 +105,7 @@
     <string name="m4399_rec_result_faile_fetch_online_date">获取网络数据失败，请检查网络状况</string>
     <string name="m4399_rec_result_success">充值成功</string>
     <string name="m4399_rec_result_on_process">充值处理中，请于一分钟后在游戏内查询。</string>
-    <string name="m4399_rec_result_order_error">充值下单异常，建议稍候再试或者用其他方式充值</string>
+    <string name="m4399_rec_result_order_error">充值下单异常，建议稍候再试或者用其他方式充值(%1$s)</string>
     <string name="m4399_rec_result_system_abnormal">系统异常</string>
     <string name="m4399_rec_result_error_data">数据格式不正确</string>
     <string name="m4399_rec_result_inquriying_result">支付结果在确认中</string>

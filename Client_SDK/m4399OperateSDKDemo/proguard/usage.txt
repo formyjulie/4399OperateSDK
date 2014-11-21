@@ -1,0 +1,999 @@
+a.a:
+    public static final boolean a
+    public static final java.lang.String b
+    public static final java.lang.String d
+    public static final java.lang.String e
+    10:10:public a()
+a.b
+a.c
+android.support.v13.app.FragmentCompat
+android.support.v13.app.FragmentCompat$BaseFragmentCompatImpl
+android.support.v13.app.FragmentCompat$FragmentCompatImpl
+android.support.v13.app.FragmentCompat$ICSFragmentCompatImpl
+android.support.v13.app.FragmentCompat$ICSMR1FragmentCompatImpl
+android.support.v13.app.FragmentCompatICS
+android.support.v13.app.FragmentCompatICSMR1
+android.support.v13.app.FragmentPagerAdapter:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private final android.app.FragmentManager mFragmentManager
+    private android.app.FragmentTransaction mCurTransaction
+    private android.app.Fragment mCurrentPrimaryItem
+    73:75:public FragmentPagerAdapter(android.app.FragmentManager)
+    public abstract android.app.Fragment getItem(int)
+    84:84:public void startUpdate(android.view.ViewGroup)
+    88:111:public java.lang.Object instantiateItem(android.view.ViewGroup,int)
+    116:122:public void destroyItem(android.view.ViewGroup,int,java.lang.Object)
+    126:138:public void setPrimaryItem(android.view.ViewGroup,int,java.lang.Object)
+    142:147:public void finishUpdate(android.view.ViewGroup)
+    151:151:public boolean isViewFromObject(android.view.View,java.lang.Object)
+    156:156:public android.os.Parcelable saveState()
+    161:161:public void restoreState(android.os.Parcelable,java.lang.ClassLoader)
+    173:173:public long getItemId(int)
+    177:177:private static java.lang.String makeFragmentName(int,long)
+android.support.v13.app.FragmentStatePagerAdapter:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private final android.app.FragmentManager mFragmentManager
+    private android.app.FragmentTransaction mCurTransaction
+    private java.util.ArrayList mSavedState
+    private java.util.ArrayList mFragments
+    private android.app.Fragment mCurrentPrimaryItem
+    79:81:public FragmentStatePagerAdapter(android.app.FragmentManager)
+    public abstract android.app.Fragment getItem(int)
+    90:90:public void startUpdate(android.view.ViewGroup)
+    98:125:public java.lang.Object instantiateItem(android.view.ViewGroup,int)
+    130:144:public void destroyItem(android.view.ViewGroup,int,java.lang.Object)
+    148:160:public void setPrimaryItem(android.view.ViewGroup,int,java.lang.Object)
+    164:169:public void finishUpdate(android.view.ViewGroup)
+    173:173:public boolean isViewFromObject(android.view.View,java.lang.Object)
+    178:195:public android.os.Parcelable saveState()
+    200:228:public void restoreState(android.os.Parcelable,java.lang.ClassLoader)
+android.support.v13.app.FragmentTabHost:
+    215:234:public void addTab(android.widget.TabHost$TabSpec,java.lang.Class,android.os.Bundle)
+android.support.v13.app.FragmentTabHost$DummyTabFactory
+android.support.v13.app.FragmentTabHost$TabInfo:
+    59:63:FragmentTabHost$TabInfo(java.lang.String,java.lang.Class,android.os.Bundle)
+b.a:
+    private java.lang.String e
+    private java.lang.String f
+    31:32:public void a(java.lang.String)
+    121:121:public java.lang.String f()
+    125:126:public void f(java.lang.String)
+    129:129:public java.lang.String g()
+    133:134:public void g(java.lang.String)
+b.b:
+    private static final java.lang.String a
+    33:33:public b()
+b.c:
+    public static final java.lang.String a
+    42:42:public org.apache.http.Header[] a()
+    64:65:public void a(java.lang.String)
+    72:73:public void b(java.lang.String)
+    77:79:public void e()
+b.d:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    private static final java.lang.String c
+    private java.lang.String f
+    40:40:public java.lang.String a()
+    55:55:public java.lang.String c()
+    184:204:public java.lang.String b(android.content.Context)
+    209:210:public void b(java.lang.String)
+    286:286:public java.lang.String g()
+b.e:
+    37:37:public boolean a()
+    69:70:public void b(boolean)
+    76:76:public long c()
+    84:85:public void a(long)
+    96:97:public void a(org.json.JSONObject)
+b.f:
+    public static final int a
+    public static final int b
+    public static final int c
+    65:65:public boolean b()
+    70:71:public void b(boolean)
+    74:74:public boolean c()
+    81:81:public org.json.JSONObject d()
+    88:88:public long e()
+    97:97:public boolean f()
+    101:101:public java.lang.String g()
+    105:105:public java.lang.String h()
+    125:125:public java.lang.String k()
+    133:133:public java.lang.String l()
+    141:141:public java.lang.String m()
+    149:149:public org.apache.http.Header[] n()
+    153:154:public void a(org.apache.http.Header[])
+    173:200:private java.lang.String o()
+c.a:
+    private static final int a
+    private static final int b
+    private static final int c
+    private static final int d
+    private static final int e
+    private static final int f
+    private static final int g
+    private static final char h
+    9:9:public a()
+c.b:
+    10:10:public b()
+c.c:
+    6:6:public c()
+    10:16:public static java.lang.String a(java.lang.String)
+c.d:
+    private static final java.lang.String b
+    public static final java.lang.String a
+    20:20:public d()
+    81:120:public static java.lang.String b(java.lang.String,java.lang.String)
+    126:146:public static java.lang.String c(java.lang.String,java.lang.String)
+    151:169:public static boolean a(java.lang.String,java.lang.String,java.lang.String)
+c.e:
+    8:8:public e()
+cn.m4399.game.BuildConfig
+cn.m4399.game.MainActivity:
+    public static final java.lang.String TAG
+    public static final int LANDSCAPE
+    public static final int PORTRAIT
+cn.m4399.game.R
+cn.m4399.game.R$anim
+cn.m4399.game.R$attr
+cn.m4399.game.R$color
+cn.m4399.game.R$dimen
+cn.m4399.game.R$drawable
+cn.m4399.game.R$id
+cn.m4399.game.R$integer
+cn.m4399.game.R$layout
+cn.m4399.game.R$raw
+cn.m4399.game.R$string
+cn.m4399.game.R$style
+cn.m4399.sdk.operate.R
+cn.m4399.sdk.operate.R$anim
+cn.m4399.sdk.operate.R$color
+cn.m4399.sdk.operate.R$dimen
+cn.m4399.sdk.operate.R$drawable
+cn.m4399.sdk.operate.R$id
+cn.m4399.sdk.operate.R$integer
+cn.m4399.sdk.operate.R$layout
+cn.m4399.sdk.operate.R$raw
+cn.m4399.sdk.operate.R$string
+cn.m4399.sdk.operate.R$style
+com.alipay.android.app.IAlixPay$Stub:
+    private static final java.lang.String DESCRIPTOR
+    static final int TRANSACTION_Pay
+    static final int TRANSACTION_test
+    static final int TRANSACTION_registerCallback
+    static final int TRANSACTION_unregisterCallback
+    static final int TRANSACTION_prePay
+    19:21:public IAlixPay$Stub()
+    39:39:public android.os.IBinder asBinder()
+com.alipay.android.app.IAlixPay$Stub$a:
+    112:112:public java.lang.String a()
+com.alipay.android.app.IRemoteServiceCallback$Stub:
+    private static final java.lang.String DESCRIPTOR
+    static final int TRANSACTION_startActivity
+    static final int TRANSACTION_payEnd
+    static final int TRANSACTION_isHideLoadingScreen
+com.alipay.android.app.IRemoteServiceCallback$Stub$a:
+    105:105:public java.lang.String a()
+com.alipay.android.app.a
+com.alipay.android.app.a$a
+com.alipay.android.app.a$a$a
+com.alipay.mobilesecuritysdk.MainHandler
+com.alipay.mobilesecuritysdk.constant.ConfigConstant
+com.alipay.mobilesecuritysdk.constant.ConfigNameEnum
+com.alipay.mobilesecuritysdk.constant.LocationNameEnum
+com.alipay.mobilesecuritysdk.datainfo.AppInfo
+com.alipay.mobilesecuritysdk.datainfo.GeoResponseInfo
+com.alipay.mobilesecuritysdk.datainfo.LocationInfo
+com.alipay.mobilesecuritysdk.datainfo.SdkConfig
+com.alipay.mobilesecuritysdk.datainfo.UploadInfo
+com.alipay.mobilesecuritysdk.datainfo.WifiCollectInfo
+com.alipay.mobilesecuritysdk.deviceID.CollectDeviceInfo:
+    99:101:public java.lang.String getResolution(android.content.Context)
+    105:108:public java.lang.String getNetworkType(android.content.Context)
+com.alipay.mobilesecuritysdk.deviceID.DataShare
+com.alipay.mobilesecuritysdk.deviceID.DeviceIdModel:
+    public static final java.lang.String PREFS_NAME
+    public static final java.lang.String PRIVATE_NAME
+    public static final java.lang.String SERVICEID
+    public static final java.lang.String VER
+    public static final java.lang.String mah1
+    public static final java.lang.String mah2
+    public static final java.lang.String mah3
+    public static final java.lang.String mah4
+    public static final java.lang.String mah5
+    public static final java.lang.String mah6
+    public static final java.lang.String mah7
+    public static final java.lang.String mah8
+    public static final java.lang.String mah9
+    public static final java.lang.String mah10
+    public static final java.lang.String mas1
+    public static final java.lang.String mas2
+    public static final java.lang.String mas3
+    public static final java.lang.String mas4
+    public static final java.lang.String mtid
+    public static final java.lang.String mutdid
+    public static final java.lang.String mAppId
+    public static final java.lang.String mDeviceInfo
+    public static final java.lang.String mDeviceId
+    public static final java.lang.String mPriDeviceId
+    public static final java.lang.String mtime
+    public static final java.lang.String mApdtk
+    public static final java.lang.String mRule
+    public static final java.lang.String mCheckCode
+    243:250:public java.util.Map GetLocalInfo()
+    283:283:public java.util.Map GetShareData(android.content.Context)
+com.alipay.mobilesecuritysdk.deviceID.DeviceMetaData:
+    public static final java.lang.String AUTH
+    public static final java.lang.String DATABASE_NAME
+    public static final int DATABASE_VER
+    public static final java.lang.String DEVICE_TABLE_NAME
+    private java.lang.String mcheckCode
+    55:55:public java.lang.String getMcheckCode()
+    59:60:public void setMcheckCode(java.lang.String)
+com.alipay.mobilesecuritysdk.deviceID.IdResponseInfo:
+    private java.lang.String merrorcode
+    private java.util.List arrList
+    20:20:public java.lang.String getFuction()
+    26:26:public java.util.List getArrList()
+    29:30:public void setArrList(java.util.List)
+    54:54:public java.lang.String isMerrorcode()
+    57:58:public void setMerrorcode(java.lang.String)
+    60:60:public java.lang.String getMversion()
+com.alipay.mobilesecuritysdk.deviceID.LOG:
+    30:30:public LOG()
+com.alipay.mobilesecuritysdk.deviceID.Profile:
+    public static final java.lang.String devicever
+com.alipay.mobilesecuritysdk.deviceID.SecurityUtils:
+    public static final java.lang.String TAG
+    11:11:public SecurityUtils()
+    91:91:public static java.lang.String toHex(java.lang.String)
+    95:95:public static java.lang.String fromHex(java.lang.String)
+com.alipay.mobilesecuritysdk.face.SecurityClientMobile:
+    private static java.lang.Thread workThread
+    15:15:public SecurityClientMobile()
+    32:87:public static synchronized void start(android.content.Context,java.util.List,boolean)
+    91:104:public static void stop()
+    107:108:public static void setError(boolean)
+    111:112:public static void setDebug(boolean)
+    115:115:public static boolean isDebug()
+    25:25:static synthetic boolean access$0()
+com.alipay.mobilesecuritysdk.face.SecurityClientMobile$1
+com.alipay.mobilesecuritysdk.model.CollectedInfo
+com.alipay.mobilesecuritysdk.model.DataProfile
+com.alipay.mobilesecuritysdk.model.SecLocationListener
+com.alipay.mobilesecuritysdk.model.Upload
+com.alipay.mobilesecuritysdk.util.CommonUtils:
+    30:30:public CommonUtils()
+    36:44:public static boolean outOfDate(long,long,int)
+    62:63:public static java.lang.String convertDate2String(java.util.Date)
+    121:135:public static boolean isBlankCollection(java.util.List)
+    157:161:public static boolean equalsIgnoreCase(java.lang.String,java.lang.String)
+    178:184:public static int string2int(java.lang.String)
+    201:207:public static long string2long(java.lang.String)
+    237:237:public static org.json.JSONObject GetJsonFromFile(java.lang.String)
+com.alipay.sdk.app.H5PayActivity:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    private static final java.lang.String c
+    private static final java.lang.String d
+com.alipay.sdk.app.PayTask:
+    68:68:public java.lang.String getVersion()
+    72:72:public boolean checkAccountIfExist()
+com.alipay.sdk.app.a
+com.alipay.sdk.app.j
+com.alipay.sdk.app.j$a
+com.alipay.sdk.app.j$b
+com.alipay.sdk.app.j$c
+com.alipay.sdk.app.j$d
+com.alipay.sdk.app.k:
+    10:10:public k()
+com.alipay.sdk.app.l:
+    18:19:public void a(int)
+    26:27:public void a(java.lang.String)
+com.alipay.sdk.exception.AppErrorException:
+    25:26:public AppErrorException(java.lang.Class)
+    33:34:public AppErrorException(java.lang.Class,java.lang.Throwable)
+com.alipay.sdk.exception.FailOperatingException:
+    34:35:public FailOperatingException(java.lang.Throwable)
+com.alipay.sdk.exception.NetErrorException:
+    public static final int NET_CONNECTION_ERROR
+    public static final int SERVER_ERROR
+    public static final int SSL_ERROR
+    39:40:public NetErrorException(java.lang.Throwable)
+    49:49:public final int getErrorCode()
+    53:54:public final void setErrorCode(int)
+com.alipay.sdk.exception.UnZipException:
+    33:34:public UnZipException(java.lang.Throwable)
+com.alipay.sdk.exception.ValifyException
+com.ta.utdid2.android.utils.AESUtils:
+    public static final java.lang.String TAG
+    12:12:public AESUtils()
+    76:76:public static java.lang.String toHex(java.lang.String)
+    80:80:public static java.lang.String fromHex(java.lang.String)
+com.ta.utdid2.android.utils.Base64:
+    public static final int DEFAULT
+    public static final int NO_PADDING
+    public static final int NO_WRAP
+    public static final int CRLF
+    public static final int URL_SAFE
+    public static final int NO_CLOSE
+    489:492:public static java.lang.String encodeToString(byte[],int,int,int)
+com.ta.utdid2.android.utils.Base64$Coder:
+    public abstract boolean process(byte[],int,int,boolean)
+    public abstract int maxOutputSize(int)
+com.ta.utdid2.android.utils.Base64$Decoder:
+    private static final int SKIP
+    private static final int EQUALS
+    261:261:public int maxOutputSize(int)
+com.ta.utdid2.android.utils.Base64$Encoder:
+    public static final int LINE_GROUPS
+    620:620:public int maxOutputSize(int)
+com.ta.utdid2.android.utils.IntUtils:
+    3:3:public IntUtils()
+    19:30:public static byte[] getBytes(byte[],int)
+com.ta.utdid2.android.utils.NetworkUtils
+com.ta.utdid2.android.utils.PhoneInfoUtils:
+    9:9:public PhoneInfoUtils()
+com.ta.utdid2.android.utils.StringUtils:
+    3:3:public StringUtils()
+    12:35:public static java.lang.String convertObjectToString(java.lang.Object)
+com.ta.utdid2.android.utils.SystemUtils
+com.ta.utdid2.core.persistent.FastXmlSerializer:
+    private static final int BUFFER_LEN
+com.ta.utdid2.core.persistent.MySharedPreferences:
+    public abstract int getInt(java.lang.String,int)
+    public abstract float getFloat(java.lang.String,float)
+    public abstract boolean getBoolean(java.lang.String,boolean)
+    public abstract boolean contains(java.lang.String)
+    public abstract void registerOnSharedPreferenceChangeListener(com.ta.utdid2.core.persistent.MySharedPreferences$OnSharedPreferenceChangeListener)
+    public abstract void unregisterOnSharedPreferenceChangeListener(com.ta.utdid2.core.persistent.MySharedPreferences$OnSharedPreferenceChangeListener)
+com.ta.utdid2.core.persistent.MySharedPreferences$MyEditor:
+    public abstract com.ta.utdid2.core.persistent.MySharedPreferences$MyEditor remove(java.lang.String)
+com.ta.utdid2.core.persistent.PersistentConfiguration:
+    private static final java.lang.String KEY_TIMESTAMP
+    private static final java.lang.String KEY_TIMESTAMP2
+    248:257:public void putInt(java.lang.String,int)
+    272:281:public void putBoolean(java.lang.String,boolean)
+    284:293:public void putFloat(java.lang.String,float)
+    308:317:public void remove(java.lang.String)
+    320:342:public void reload()
+    345:355:public void clear()
+    432:438:public int getInt(java.lang.String)
+    442:448:public long getLong(java.lang.String)
+    452:458:public float getFloat(java.lang.String)
+    462:468:public boolean getBoolean(java.lang.String)
+    472:478:public java.util.Map getAll()
+com.ta.utdid2.core.persistent.TransactionXMLFile:
+    public static final int MODE_WORLD_WRITEABLE
+    public static final int MODE_WORLD_READABLE
+    public static final int MODE_PRIVATE
+com.ta.utdid2.core.persistent.TransactionXMLFile$MySharedPreferencesImpl:
+    167:170:public void registerOnSharedPreferenceChangeListener(com.ta.utdid2.core.persistent.MySharedPreferences$OnSharedPreferenceChangeListener)
+    174:177:public void unregisterOnSharedPreferenceChangeListener(com.ta.utdid2.core.persistent.MySharedPreferences$OnSharedPreferenceChangeListener)
+    194:197:public int getInt(java.lang.String,int)
+    208:211:public float getFloat(java.lang.String,float)
+    215:218:public boolean getBoolean(java.lang.String,boolean)
+    222:224:public boolean contains(java.lang.String)
+com.ta.utdid2.core.persistent.TransactionXMLFile$MySharedPreferencesImpl$EditorImpl:
+    267:270:public com.ta.utdid2.core.persistent.MySharedPreferences$MyEditor remove(java.lang.String)
+com.ta.utdid2.core.persistent.XmlUtils:
+    20:20:XmlUtils()
+    24:29:public static void skipCurrentTag(org.xmlpull.v1.XmlPullParser)
+    33:40:public static final int convertValueToList(java.lang.CharSequence,java.lang.String[],int)
+    45:53:public static final boolean convertValueToBoolean(java.lang.CharSequence,boolean)
+    58:96:public static final int convertValueToInt(java.lang.CharSequence,int)
+    101:104:public static final int convertValueToUnsignedInt(java.lang.String,int)
+    108:134:public static final int parseUnsignedIntAttribute(java.lang.CharSequence)
+    178:185:public static final void writeListXml(java.util.List,java.io.OutputStream)
+    479:481:public static final java.util.ArrayList readListXml(java.io.InputStream)
+    787:799:public static final void beginDocument(org.xmlpull.v1.XmlPullParser,java.lang.String)
+    805:808:public static final void nextElement(org.xmlpull.v1.XmlPullParser)
+com.ta.utdid2.device.Device:
+    19:19:long getCheckSum()
+com.ta.utdid2.device.DeviceInfo:
+    static final byte UTDID_VERSION_CODE
+    10:10:public DeviceInfo()
+com.ta.utdid2.device.UTDevice:
+    10:10:public UTDevice()
+com.ta.utdid2.device.UTUtdid:
+    private static final java.lang.String HMAC_KEY
+    static final java.lang.String UM_SETTINGS_STORAGE
+    static final java.lang.String UM_SETTINGS_STORAGE_NEW
+    private static final java.lang.String S_LOCAL_STORAGE_NAME
+    private static final java.lang.String S_LOCAL_STORAGE_KEY
+    private static final java.lang.String S_GLOBAL_PERSISTENT_CONFIG_KEY
+com.ta.utdid2.device.UTUtdidHelper:
+    63:67:public static java.lang.String generateRandomUTDID()
+com.unipay.beans.BuyAppTool2Rsp
+com.unipay.beans.CheckAliPayRsp
+com.unipay.beans.CheckPayReg
+com.unipay.beans.CheckRedeemRsp
+com.unipay.beans.GameBaseBean:
+    public void setChannelid(java.lang.String)
+    public java.lang.String getCompany()
+    public void setCompany(java.lang.String)
+    public java.lang.String getTelephone()
+    public void setTelephone(java.lang.String)
+    public void setGame(java.lang.String)
+    public void setAppid(java.lang.String)
+    public void setPrmCode(java.lang.String)
+    public void setCpid(java.lang.String)
+    public void setUid(java.lang.String)
+com.unipay.beans.GetMdnRsp
+com.unipay.beans.LoginRsp
+com.unipay.beans.PayUpompRsp
+com.unipay.beans.PayValueBean:
+    public void setVac_mode(java.lang.String)
+    public void setOrderid(java.lang.String)
+    public java.lang.String getProps()
+    public void setProps(java.lang.String)
+    public void setMoney(java.lang.String)
+    public void setVacCode(java.lang.String)
+    public void setCustomCode(java.lang.String)
+com.unipay.beans.PayviaVACRsp
+com.unipay.beans.PhoneMs
+com.unipay.beans.RegisterBean
+com.unipay.beans.ShenzhouParamsBean
+com.unipay.beans.UniPay3rdRsp
+com.unipay.beans.upomp
+com.unipay.crypt.Base64:
+    private Base64()
+com.unipay.crypt.CryptUtil:
+    private static final java.lang.String _$4
+    private static final java.lang.String _$3
+    public CryptUtil()
+com.unipay.errormsg.ErrorMsgBean:
+    public void setAdv(java.lang.String)
+    public void setNotice(java.lang.String)
+    public void setKey(int)
+    public void setMsg(java.lang.String)
+com.unipay.errormsg.ErrorMsgHttpRequest:
+    private static final java.lang.String _$5
+    private static final int _$4
+    private static final java.lang.String _$3
+com.unipay.errormsg.IIIIlIIIlIIIIIII:
+    public IIIIlIIIlIIIIIII(com.unipay.errormsg.SqliteUtils,android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)
+com.unipay.errormsg.SqliteUtils:
+    public com.unipay.errormsg.ErrorMsgBean QueryDB(java.lang.String[],java.lang.String,java.lang.String[])
+com.unipay.log.IIIlIlIIlIlllllI
+com.unipay.log.LogNet:
+    private static com.unipay.log.Parameters _$1
+    public static final java.lang.String URLSTR
+    public static final java.lang.String publicURL
+    public void UpdateHttpLog(java.lang.String,java.lang.String,android.content.Context)
+    public void UpdateHttpMessage(java.lang.String,java.lang.String,android.content.Context)
+    public static boolean isNetWorkAvaible(android.content.Context)
+    public static void initParams(android.content.Context)
+    static synthetic com.unipay.log.Parameters _$1()
+com.unipay.log.LogNet$LogResult
+com.unipay.log.LogSocket:
+    private static final int _$4
+    public static final int TIMEOUT
+    private static final java.lang.String _$3
+    private static final java.lang.String _$2
+    public java.lang.String UpdateClientLog(java.lang.String,com.unipay.log.Parameters,java.lang.String)
+    private org.json.JSONObject _$1(com.unipay.log.Parameters,java.lang.String)
+    private java.lang.String _$1(java.lang.String)
+    private java.util.List _$1()
+com.unipay.log.LogSocket$SDKTYPE
+com.unipay.log.LogUtils:
+    public LogUtils()
+    public static int getCounts(android.content.Context)
+    public static boolean getFirstUseSdk(android.content.Context)
+    public static void setFirstUseSdk(android.content.Context)
+    public static boolean getUpdateLog(android.content.Context)
+    public static void setUpdateLog(android.content.Context,boolean)
+    public static void setCounts(android.content.Context)
+    public static void initCounts(android.content.Context)
+    public static void deleteFileWithTotalPath(java.lang.String,android.content.Context)
+    public static void deleteFile(java.lang.String,android.content.Context)
+    public static void writeLog_device(android.content.Context)
+    public static void writeLog_login(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public static void writeLog_selectsrv(android.content.Context,java.lang.String,java.lang.String,java.lang.String)
+    public static void writeLog_exit(android.content.Context,java.lang.String)
+    public static boolean isSdcardExit()
+    private static void _$2(java.lang.String,java.lang.String)
+com.unipay.log.Parameters:
+    public void remove(java.lang.String)
+    public void remove(int)
+    public int getLocation(java.lang.String)
+    public java.lang.String getValue(java.lang.String)
+    public void addAll(com.unipay.log.Parameters)
+    public void clear()
+com.unipay.log.llllIlIIlIlllllI
+com.unipay.net.AsyncMultimode:
+    public void request(java.lang.String,java.lang.String,com.unipay.net.Parameters,com.unipay.net.AsyncMultimode$RequestListener)
+com.unipay.net.HttpNet:
+    public static final java.lang.String GET
+    public static final java.lang.String POST
+    public static final java.lang.String UTF_8
+    public static final int timeoutConnection
+    public static final int timeoutSocket
+    public java.io.InputStream request(java.lang.String,com.unipay.net.Parameters,java.lang.String)
+com.unipay.net.IIlIllllIIIllllI
+com.unipay.net.Parameters:
+    public void remove(java.lang.String)
+    public void remove(int)
+    public int getLocation(java.lang.String)
+    public java.lang.String getValue(java.lang.String)
+    public void addAll(com.unipay.net.Parameters)
+com.unipay.tools.BlackNameUtils:
+    public BlackNameUtils()
+com.unipay.tools.DensityUtil
+com.unipay.tools.ExceedingTools:
+    private java.lang.String _$7
+    public static final java.lang.String SP_NAME
+    public static final java.lang.String KEY_MONEY
+    private static final java.lang.String _$6
+    private static final java.lang.String _$5
+    private static final java.lang.String _$4
+    public static final boolean IS_UP_100
+    public static final java.lang.String DX_SP_NAME
+    public static final java.lang.String DX_KEY_MONEY
+    private static final java.lang.String _$3
+    private static final java.lang.String _$2
+    private static final java.lang.String _$1
+    public boolean checkExceeding()
+    public boolean DXcheckExceeding()
+    public void SubMoney(int)
+    public void DXSubMoney(int)
+    private boolean _$6()
+    private boolean _$5()
+    private boolean _$4()
+    private boolean _$3()
+    private boolean _$2()
+    private boolean _$1()
+    public java.lang.String random4num()
+    public boolean checkRan4Num(java.lang.String)
+    public void setCurrentRan4Num(java.lang.String)
+    public void showExceedDialog(com.unipay.dialog.ExceedDialog$ExceedingResultListener)
+com.unipay.tools.MultimodeConfig:
+    private static final java.lang.String _$24
+    private static int _$8
+    private static com.unipay.beans.LoginRsp _$7
+    private static com.unipay.beans.CheckPayReg _$6
+    private static boolean _$5
+    private static boolean _$4
+    private static boolean _$3
+    public MultimodeConfig()
+    public static void initCheckRedeemMap()
+    public static java.lang.String getCheckRedeemValue(java.lang.String)
+    public static java.lang.String getAuthKeyStr()
+    public static boolean isInit()
+    public static void setInit(boolean)
+    public static boolean isSuppertSms()
+    public static void setSuppertSms(boolean)
+    public static boolean isSupportVac()
+    public static void setSupportVac(boolean)
+    public static boolean isSupportOtherPay()
+    public static void setSupportOtherPay(boolean)
+    public static com.unipay.beans.CheckPayReg getmCheckPayReg()
+    public static void setmCheckPayReg(com.unipay.beans.CheckPayReg)
+    public static int getUsertype()
+    public static void setUsertype(int)
+    public static com.unipay.beans.LoginRsp getmLoginRsp()
+    public static void setmLoginRsp(com.unipay.beans.LoginRsp)
+    public static long getStarttime()
+    public static void setStarttime(long)
+    public static void setUserid(java.lang.String)
+    public static void setmGameBaseBean(com.unipay.beans.GameBaseBean)
+    public static void setmPayValueBean(com.unipay.beans.PayValueBean)
+    public static java.lang.String getHelpMsg()
+    public static void setHelpMsg(java.lang.String)
+    public static void setHandphone(java.lang.String)
+    public static void setPhone(java.lang.String)
+    public static java.lang.String getCallbackUrl()
+    public static java.lang.String getPasswd()
+    public static void setPasswd(java.lang.String)
+    public static java.lang.String getAuthentime()
+    public static void setAuthentime(java.lang.String)
+    public static boolean isNeedSave()
+    public static void setNeedSave(boolean)
+    public static void setImei(java.lang.String)
+    private java.lang.String _$1(android.content.Context,java.lang.String,java.lang.String)
+    private void _$1(android.content.Context,java.lang.String,java.lang.String,java.lang.String)
+com.unipay.tools.MyApplication:
+    public static final java.lang.String SMS_ACTION
+    public static final java.lang.String VAC_ACTION
+    public static final java.lang.String PHONE_NUMBER_ACTION
+    public static final java.lang.String BASE_ASSETS
+    public static final java.lang.String EXTEND_ASSETS
+    public static final boolean debug
+    public static final java.lang.String VAC_PHONE
+    public static final java.lang.String SMS_PHONE
+    public static final java.lang.String MONTH_VAC_PHONE
+    public static final java.lang.String PHONE_NUMBER_PHONE
+    public static final java.lang.String DX_SMS_PHONE
+com.unipay.tools.PhoneInfoTools:
+    private static final float _$1
+    public PhoneInfoTools()
+    public static java.lang.String GetHostIP()
+    public static boolean is24Orderid(java.lang.String)
+    public static java.lang.String getCurrentAPN(android.content.Context)
+    public static java.lang.String Md5(java.lang.String)
+    public static final int getVersionCode(android.content.Context)
+    public static final java.lang.String getVersionName(android.content.Context)
+    public static final java.lang.String getPhoneNum(android.content.Context)
+    public static final java.lang.String getMSISDN(android.content.Context)
+    public static final java.lang.String getDisplayMetrics(android.content.Context)
+    public static final java.lang.String getDensity(android.content.Context)
+    public static final java.lang.String getWidth(android.content.Context)
+    public static final java.lang.String getHeight(android.content.Context)
+    public static final java.lang.String getFidVac(android.content.Context)
+    public static final java.lang.String getCpid(android.content.Context)
+    public static final java.lang.String getAppid(android.content.Context)
+    public static final boolean isSimVaild(android.content.Context)
+    public static final java.lang.String getSdkVersion()
+    public static final boolean isExistSdCard()
+    public static final boolean isNetAvailable(android.content.Context)
+    public static final java.lang.Object getMetaInfo(android.content.Context,java.lang.String)
+    public static boolean isDualMode()
+    public static int getSecondSimState()
+    private static int _$1(java.lang.String)
+    public static void toCorner(android.view.View,float)
+    public static android.graphics.drawable.GradientDrawable GetCorner(float,int)
+    public static android.graphics.drawable.GradientDrawable GetCornerWithLine(int,int,float,int)
+    public static void toCornerTop(android.view.View,float)
+    public static android.graphics.drawable.GradientDrawable GetChangeBackground(int,int,float)
+    public static void FullScreenCornerTop(android.view.View)
+    public static android.graphics.drawable.GradientDrawable getWindowsBackGround(int)
+com.unipay.tools.Utilities:
+    private static java.lang.String _$2
+    public java.lang.String getUnSub_feetype()
+    public void setUnSub_feetype(java.lang.String)
+    public void setVac_command(java.lang.String)
+    public java.lang.String getCommand()
+    public void setCommand(java.lang.String)
+    public void setFeetype(java.lang.String)
+    public java.lang.String getCpparam()
+    public void setCpparam(java.lang.String)
+    public java.lang.String getPayfee()
+    public void setPayfee(java.lang.String)
+    public java.lang.String getConsumePrice()
+    public android.graphics.Bitmap getBitMapDrawable(android.content.Context,java.lang.String)
+    public byte[] readInputStream(java.io.InputStream)
+    public void setConsumePrice(java.lang.String)
+    public java.lang.String getMdn()
+    public void setMdn(java.lang.String)
+    public java.lang.String getMd5passwd()
+    public void setMd5passwd(java.lang.String)
+    public java.lang.String getEncrypt()
+    public void setEncrypt(java.lang.String)
+    public static java.lang.String UTF8_decode(byte[])
+    public static byte[] UTF8_decode(java.lang.String)
+    public static java.lang.String getSize(int)
+    public static java.lang.String getPercent(int,int)
+    public static void sleep(long)
+    public static int bytes2int(byte[])
+    public static byte[] int2bytes(int)
+    public static java.lang.String[] splitString(java.lang.String,char)
+    public static java.lang.String[] splitString(java.lang.String,java.lang.String)
+    public static long string2Time(java.lang.String)
+    public static java.lang.String time2String(long)
+    public static int getMonth(java.lang.String)
+    private static java.lang.String _$1(java.lang.String)
+    private static void _$2()
+    private static long _$4(long,long,long)
+    private static long _$3(long,long,long)
+    private static long _$2(long,long,long)
+    private static long _$1(long,long,long)
+    private static long _$4(long,long,long,long,long,long,long)
+    private static long _$3(long,long,long,long,long,long,long)
+    private static long _$2(long,long,long,long,long,long,long)
+    private static long _$1(long,long,long,long,long,long,long)
+    private static void _$1(byte[],int)
+    private static void _$1()
+    private static void _$1(byte[],byte[],int,int,int)
+    private static void _$1(byte[])
+    private static void _$1(byte[],long[],int)
+    private static void _$1(long[],byte[],int)
+    private static long _$2(byte)
+    private static java.lang.String _$1(byte)
+    public static java.lang.String MD5(java.lang.String)
+com.unipay.tools.VerificationCode
+com.unipay.unipay_sdk.UniPay:
+    public static final int SUCCESS
+    public static final int FAILED
+    public static final int CANCEL
+    public static final int SMS_SEND
+    public static final int VAC_SEND
+    public static final int MONTH_SEND
+    public static final int UNMONTH_SEND
+    public static final int DX_SMS_SEND
+    public static final int SUBCOMMIT_VAC
+    public static final int SUCCESS_SMS
+    public static final int SUBCOMMIT_WEBALIPAY
+    public static final int SUCCESS_KALIPAY
+    public static final int SUBCOMMIT_SZF
+    public static final int CANCEL_FIRSTPAGE
+    public static final int CANCEL_VACPAYPAGE
+    public static final int CANCEL_OTHERPAYPAGE
+    public static final int CANCEL_CHANGECODE
+    public static final int CANCEL_VACYZM
+    public static final int OTHERPAY
+    public static final int PHONE_NUMBER_SEND
+    private static final int _$42
+    public static int echangeCode
+    private com.unipay.beans.CheckRedeemRsp _$32
+    private com.unipay.beans.PayviaVACRsp _$17
+    private com.unipay.beans.CheckPayReg _$16
+    private com.unipay.beans.UniPay3rdRsp _$15
+    private com.unipay.beans.PayUpompRsp _$14
+    private com.unipay.beans.LoginRsp _$13
+    private java.lang.String _$8
+    private java.lang.String _$7
+    private android.app.KeyguardManager$KeyguardLock _$2
+    public boolean isCpOtherPay()
+    public void setCpOtherPay(boolean)
+    public boolean isOtherPay()
+    public void setOtherPay(boolean)
+    private java.lang.String _$8(java.lang.String)
+    private java.lang.String _$6(java.lang.String)
+    private java.lang.String _$5(java.lang.String)
+    public void moreGame(android.content.Context)
+    private void _$10()
+    private void _$1(java.lang.String,int)
+    private void _$1(java.lang.String)
+    public void setSupportVacPay(boolean)
+    public void setSupportSms(boolean)
+    public void setSupportOtherPay(boolean)
+    public void exit(android.content.Context)
+    public void selectedsrv(android.content.Context,java.lang.String,java.lang.String)
+com.unipay.wostore.tabledata.ByteProcess:
+    public static final int CHARSIZE
+    public ByteProcess()
+    public static final byte[] charToByteArray(char)
+    public static final byte[] booleanToByteArray(boolean)
+    public static final byte[] intToByteArray(int)
+    public static final byte[] longToByteArray(long)
+    public static final byte[] stringToByteArray(java.lang.String)
+    public static final char byteArrayToChar(byte[])
+    public static final char[] byteArrayToCharArray(byte[])
+    public static final byte[] charArrayToByteArray(char[])
+    public static final short byteArrayToShort(byte[],int)
+    public static final long byteArrayToLong(byte[],int)
+    public static final java.lang.String byteArrayToString(byte[])
+    public static final byte[] appendToByteArray(byte[],byte[],int)
+    public static final byte[] getSubByteArray(byte[],int,int)
+    public static final boolean compareByteArray(byte[],byte[])
+    public static final char[] stringToCharArray(java.lang.String)
+    public static final int getIntFromString(java.lang.String,int)
+    public void _finalize()
+com.unipay.wostore.tabledata.DataAdapter:
+    public long getTimeStamp()
+    public void setTimeStamp(long)
+    public void encode(java.io.DataOutputStream)
+    public void _finalize()
+com.unipay.wostore.tabledata.DataParser:
+    public static final int DEFAULT_TIME
+    public DataParser()
+    public static byte[] encode(com.unipay.wostore.tabledata.DataAdapter)
+    public void _finalize()
+com.unipay.wostore.tabledata.DataUtil:
+    public DataUtil()
+    public static byte getByte(com.unipay.wostore.tabledata.WoRowData,java.lang.String)
+    public static long getLong(com.unipay.wostore.tabledata.WoRowData,java.lang.String)
+    public static byte[] getByteArray(com.unipay.wostore.tabledata.WoRowData,java.lang.String)
+    public static byte[] getByteArraySP(com.unipay.wostore.tabledata.WoRowData,java.lang.String)
+com.unipay.wostore.tabledata.WoColumnData:
+    public void encode(java.io.DataOutputStream)
+    public void setname(java.lang.String)
+    public void setvalue(java.lang.String)
+    public void setvalue(int)
+    public void setvalue(byte)
+    public void setres(byte[])
+com.unipay.wostore.tabledata.WoRowData:
+    public void encode(java.io.DataOutputStream)
+    public void _finalize()
+com.unipay.wostore.tabledata.WoTableData:
+    public void encode(java.io.DataOutputStream)
+    public void setname(java.lang.String)
+    public void _finalize()
+com.unipay.xmlParser.XMLUtil
+com.ut.device.UTDevice
+d.a:
+    51:52:public a(android.content.Context)
+d.b:
+    public static final java.lang.String a
+    174:182:public void b()
+    211:213:public org.apache.http.HttpResponse a(org.apache.http.client.methods.HttpUriRequest,org.apache.http.protocol.HttpContext)
+    220:223:public org.apache.http.HttpResponse a(org.apache.http.HttpHost,org.apache.http.HttpRequest)
+    230:232:public org.apache.http.HttpResponse a(org.apache.http.HttpHost,org.apache.http.HttpRequest,org.apache.http.protocol.HttpContext)
+    239:241:public java.lang.Object a(org.apache.http.client.methods.HttpUriRequest,org.apache.http.client.ResponseHandler)
+    249:251:public java.lang.Object a(org.apache.http.client.methods.HttpUriRequest,org.apache.http.client.ResponseHandler,org.apache.http.protocol.HttpContext)
+    258:260:public java.lang.Object a(org.apache.http.HttpHost,org.apache.http.HttpRequest,org.apache.http.client.ResponseHandler)
+    268:270:public java.lang.Object a(org.apache.http.HttpHost,org.apache.http.HttpRequest,org.apache.http.client.ResponseHandler,org.apache.http.protocol.HttpContext)
+d.c:
+    30:30:public c()
+    47:55:public static org.apache.http.HttpResponse a(android.content.Context,java.lang.String,java.lang.String)
+    136:137:public static void a()
+    140:140:public static java.lang.String a(java.lang.String)
+    144:144:public static java.lang.String b(java.lang.String)
+d.d:
+    148:174:protected java.lang.String a(java.lang.String)
+e.a:
+    49:49:public org.json.JSONObject a()
+    53:53:public java.lang.String b()
+    57:57:public java.lang.String c()
+    61:61:public java.lang.String d()
+    69:69:public java.lang.String f()
+    73:73:public org.json.JSONObject g()
+    77:77:public java.lang.String h()
+    81:81:public java.lang.String i()
+    85:85:public boolean j()
+    89:89:public boolean k()
+    93:93:public boolean l()
+    97:97:public java.lang.String m()
+e.b:
+    138:138:public static e.b a(java.lang.String,e.a)
+e.c:
+    34:35:public void a(b.e)
+    38:39:public void a(b.f)
+    50:50:public int c()
+    73:77:public void e()
+e.g:
+    37:37:public boolean f()
+    47:47:public int g()
+    57:57:public java.lang.String h()
+    61:61:public boolean i()
+e.h:
+    public static final int a
+    public static final int b
+    public static final int c
+    public static final int d
+    public static final int e
+    public static final int f
+    public static final int g
+    public static final int h
+    public static final int i
+    public static final int j
+    public static final int k
+    public static final int l
+    52:53:public void j()
+    56:56:public int k()
+    60:60:public boolean l()
+    64:65:public void a(boolean)
+    68:68:public boolean m()
+    public abstract boolean f()
+    public abstract int g()
+    public abstract java.lang.String h()
+f.a:
+    private java.lang.String c
+    private int d
+    69:69:public int e()
+    73:74:public void a(int)
+    80:84:public java.lang.String f()
+    144:144:public java.lang.String b(int)
+    148:148:public float h()
+    159:159:public static java.lang.String j()
+f.b:
+    14:14:public b()
+    32:83:public static void a(android.content.Context)
+    90:90:public static double a()
+    98:98:public static double b()
+g.a:
+    private static final java.lang.String a
+    private static final int b
+    109:131:public long c(java.lang.String,java.lang.String)
+    135:161:public java.util.List a()
+g.b:
+    71:71:public boolean c()
+h.a:
+    17:17:public a()
+    74:85:public static java.lang.String c(java.lang.String)
+    90:105:public static java.lang.String a(java.lang.String,java.lang.String)
+h.b:
+    24:24:public b()
+    27:30:public static java.lang.String a(java.lang.String)
+    178:184:public static void a(android.content.Context,java.lang.String)
+    188:196:public static void a(java.lang.String,java.lang.String)
+h.c:
+    public static final java.lang.String a
+    public static final java.lang.String b
+    public static final java.lang.String c
+    private static final java.lang.String f
+    public static final java.lang.String d
+    45:45:public java.lang.String a()
+    186:196:public static boolean c(android.content.Context)
+    206:216:public static boolean f()
+h.d:
+    20:20:public d()
+    53:53:public static java.lang.String a(java.lang.String)
+h.e:
+    private static final boolean a
+    private static final java.lang.String b
+    5:5:public e()
+h.f:
+    64:65:public final void a(java.lang.String)
+h.j:
+    9:9:public j()
+    16:16:public static int b(java.lang.String)
+    20:20:public static int c(java.lang.String)
+    24:24:public static int d(java.lang.String)
+    28:28:public static int e(java.lang.String)
+    40:40:public static int h(java.lang.String)
+    44:44:public static int i(java.lang.String)
+    48:48:public static int j(java.lang.String)
+    60:60:public static int[] k(java.lang.String)
+    68:83:public static final int[] a(android.content.Context,java.lang.String)
+h.k:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    private static final java.lang.String c
+    private static final java.lang.String d
+    41:41:public k()
+    109:118:public static h.f d(android.content.Context)
+    123:130:public static boolean e(android.content.Context)
+    134:147:public static java.lang.String a(java.lang.String)
+    151:160:public static java.lang.String b(java.lang.String)
+    165:173:public static void a(java.lang.String,java.lang.String)
+    177:177:public static java.lang.String f(android.content.Context)
+    287:312:public static boolean a(android.content.Context,java.lang.String,java.lang.String)
+    316:319:public static android.content.pm.PackageInfo a(android.content.Context,java.lang.String)
+    323:329:public static void a(android.app.Activity,java.lang.String)
+    361:368:public static boolean c(java.lang.String)
+org.agoo.ut.device.UTDevice
+sms.purchasesdk.cartoon.OnSMSPaycodeListener:
+    public static final java.lang.String PAYCODE
+    public static final java.lang.String TRADEID
+sms.purchasesdk.cartoon.PurchaseCode:
+    public static final int INIT_OK
+    public static final int ORDER_OK
+    public static final int UNKNOWN_ERR
+    public static final int PARAMETER_ERR
+    public static final int INIT_TEST_APK
+    public static final int INIT_NO_ACTIVE
+    public static final int INIT_NOT_CMCC
+    public static final int INIT_IMEI_ERR
+    public static final int INIT_SID_ERR
+    public static final int INIT_IMSI_ERR
+    public static final int INIT_PUBKEY_ERR
+    public static final int INIT_SMS_ERR
+    public static final int INIT_CHECK_ERR
+    public static final int INIT_EXCEPTION
+    public static final int INIT_OTHER_ERR
+    public static final int INIT_TIMEOUT
+    public static final int BILL_XML_PARSE_ERR
+    public static final int BILL_CANCEL_FAIL
+    public static final int BILL_NOORDER
+    public static final int BILL_DIALOG_SHOWERROR
+    public static final int BILL_INVALID_APP
+    public static final int BILL_INVALID_SIGN
+    public static final int BILL_INVALID_SIDSIGN
+    public static final int BILL_UNDEFINED_ERROR
+    public static final int BILL_SDK_ERROR
+    public static final int BILL_PAYCODE_ERR
+    public static final int BILL_PAYCODE_NULL
+    public static final int BILL_APP_SO_ERR
+    public static final int BILL_APP_ERR
+    public static final int BILL_SMS_ERR
+    public static final int ORDER_OK_TIMEOUT
+    public static final int ORDER_UNI_NOT_FIND_PAYCODE
+    public static final int INVALID_SIMCARD
+    public static final int ORDER_TELE_NOT_FIND_PAYCODE
+    public static final java.lang.String UNDEFINED_ERR
+    public PurchaseCode()
+sms.purchasesdk.cartoon.SMSPaycode:
+    public void smsInit(android.content.Context,sms.purchasesdk.cartoon.OnSMSPaycodeListener)
+    public void smsOrder(android.content.Context,java.lang.String,sms.purchasesdk.cartoon.OnSMSPaycodeListener)
+sms.purchasesdk.cartoon.d.a:
+    public a()
+sms.purchasesdk.cartoon.d.b:
+    public b()
+sms.purchasesdk.cartoon.d.c:
+    public c()
+sms.purchasesdk.cartoon.d.e:
+    public e()
+sms.purchasesdk.cartoon.fingerprint.IdentifyApp:
+    public IdentifyApp()
+sms.purchasesdk.cartoon.fingerprint.a:
+    public a()
+sms.purchasesdk.cartoon.g:
+    public g()
+sms.purchasesdk.cartoon.ui.a:
+    public a()
+sms.purchasesdk.cartoon.ui.b:
+    public b(android.content.Context)
+sms.purchasesdk.cartoon.ui.q:
+    public q()

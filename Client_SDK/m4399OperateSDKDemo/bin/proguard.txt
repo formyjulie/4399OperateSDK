@@ -41,10 +41,6 @@
 # view AndroidManifest.xml #generated:58
 -keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
 
-# view res/layout/hfb_billingcode.xml #generated:154
-# view res/layout/hfb_padquery.xml #generated:61
--keep class com.umpay.huafubao.view.CountDownButton { <init>(...); }
-
 # onClick res/layout/main.xml #generated:51
 -keepclassmembers class * { *** onIsLoginButtonClicked(...); }
 
@@ -53,6 +49,9 @@
 
 # onClick res/layout/main.xml #generated:66
 -keepclassmembers class * { *** onLogoutButtonClicked(...); }
+
+# onClick res/layout/main.xml #generated:138
+-keepclassmembers class * { *** onQuitGameClicked(...); }
 
 # onClick res/layout/main.xml #generated:99
 -keepclassmembers class * { *** onRechargeButtonClicked(...); }

@@ -129,6 +129,21 @@
                         android:onClick="onRemoveAccountButtonClicked"
                         android:text="@string/delete_account" />
                 </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/button9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        android:onClick="onQuitGameClicked"
+                        android:text="退出游戏" />
+                </TableRow>
             </TableLayout>
 
             <CheckBox
@@ -139,13 +154,28 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/set_orirentation" />
 
-            <Spinner
-                android:id="@+id/assis_pop_style_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="@string/set_orirentation" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/assis_pop_style_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/set_orirentation" />
+			<!-- 
+                <Spinner
+                    android:id="@+id/assis_pop_position_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/set_orirentation" />
+                 -->
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

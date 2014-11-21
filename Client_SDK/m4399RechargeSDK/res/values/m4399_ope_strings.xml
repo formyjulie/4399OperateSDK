@@ -18,6 +18,7 @@
 	<string name="m4399_ope_usercenter_change_pwd_warnning_msg">密码已修改成功，请重新登录游戏。</string>
 	<string name="m4399_ope_usercenter_action_logout">注销</string>
 	<string name="m4399_ope_usercenter_logout_warnning_msg">注销后将清除帐号登陆信息，你确定要注销吗？</string>
+	<string name="m4399_ope_have_no_sms">没有检测到SMS卡，不能发送短信</string>
 	
 	<!-- For login and account switcher activity -->
 	<string name="m4399_ope_usercenter_timeout_warning">操作超时，请重试。</string>
@@ -39,6 +40,8 @@
     <string name="m4399_ope_loading_page">加载中，请稍候 </string>
     
     <!-- For login and logout -->
+    <string name="m4399_ope_checking_login_state">正在检查登录状态，请稍候</string>
+    <string name="m4399_ope_fetching_login_url">正在获取登录链接，请稍候</string>
     <string name="m4399_ope_no_network">网络异常,不能正常访问服务器</string>
     <string name="m4399_ope_login_success">登录成功</string>
     <string name="m4399_ope_sdk_login_failed_unable_access_oauth2">不能取得认证</string>
@@ -50,6 +53,11 @@
     <string name="m4399_ope_logout_failed_error_unknown">由于未知原因导致登出失败，请检查网络或者是否已经登录成功</string>
     
     <!-- For check and update apk -->
+    <string name="m4399_ope_check_error">检查更新失败</string>
+    <string name="m4399_ope_result_code">错误码： %1$d</string>
+    <string name="m4399_ope_result_msg">错误信息： %1$s</string>
+    <string name="m4399_ope_check_storage_error">没有足够可用的存储空间</string>
+    <string name="m4399_ope_check_md5_error">检查当前包信息出错</string>
     <string name="m4399_ope_update_now">立即更新</string>
     <string name="m4399_ope_install_now">立即安装</string>
     <string name="m4399_ope_dialog_update_title">游戏更新（%s版)</string>
@@ -64,8 +72,10 @@
     <string name="m4399_ope_update_result_user_canclled">用户取消更新</string>
     <string name="m4399_ope_update_result_update_now">立即更新</string>
     <string name="m4399_ope_update_result_download_success">下载APK成功</string>
+    <string name="m4399_ope_update_result_network_error">不能正常访问服务器，检查更新失败</string>
     <string name="m4399_ope_update_result_check_error">由于未知原因导致检查版本失败</string>
     <string name="m4399_ope_update_result_download_error">由于未知原因导致下载失败</string>
+    <string name="m4399_ope_retry_too_many_times">重试次数过多，请检查网络是否通畅</string>
     <string name="m4399_ope_update_force_hint">再次点击，退出游戏</string>
     
     <!-- For pre-pay -->
@@ -78,8 +88,16 @@
     
     <!--  弹窗界面 -->
     <string name="m4399_ope_pop_circle">游戏圈</string>
-    <string name="m4399_ope_pop_circle_warnning_msg">游戏圈由4399游戏盒提供，内含丰富的攻略和游戏礼包，您是否要前往下载？</string>
-    <string name="m4399_ope_pop_user">账户</string>
-    <string name="m4399_ope_pop_hide">隐藏</string>
-	
+    <string name="m4399_ope_pop_circle_warnning_msg">《%1$s》的第一手资料、最及时的礼包攻略？快来下载4399游戏盒子，这一切唾手可得！</string>
+    <string name="m4399_ope_pop_user">账 户</string>
+    <string name="m4399_ope_pop_hide">隐 藏</string>
+    <string name="m4399_ope_pop_raiders">攻 略</string>
+    <string name="m4399_ope_pop_gift">礼 包</string>
+    <string name="m4399_ope_pop_website">官 网</string>
+    <string name="m4399_ope_pop_close">关 闭</string>
+    <string name="m4399_ope_pop_wait">待开放</string>
+    <string name="m4399_ope_pop_go_gamecircle">前往游戏圈</string>
+    <string name="m4399_ope_pop_quit_game">退出游戏</string>
+    <string name="m4399_ope_pop_close_toast">弹窗已关闭，将在下次启动游戏时开启</string>
+    
 </resources>
