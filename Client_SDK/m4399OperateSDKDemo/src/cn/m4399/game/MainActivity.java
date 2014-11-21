@@ -36,7 +36,7 @@ import cn.m4399.operate.OperateCenter.OnCheckFinishedListener;
 import cn.m4399.operate.OperateCenter.OnDownloadListener;
 import cn.m4399.operate.OperateCenter.OnLoginFinishedListener;
 import cn.m4399.operate.OperateCenter.OnLogoutFinishedListener;
-import cn.m4399.operate.OperateCenter.OnQuitGameFinishedListener;
+import cn.m4399.operate.OperateCenter.OnQuitGameListener;
 import cn.m4399.operate.OperateCenter.OnRechargeFinishedListener;
 import cn.m4399.operate.OperateCenter.OnSwitchUserAccountListener;
 import cn.m4399.operate.OperateCenterConfig;
@@ -309,7 +309,7 @@ public class MainActivity extends Activity {
 				TextView jeTV = (TextView) sv.findViewById(R.id.je);
 				String je = jeTV.getText().toString();
 
-				String mark = "20140417150717" + System.currentTimeMillis();
+				String mark = "20140417150717|-_" + System.currentTimeMillis();
 				if (mark.length() > 22)
 					mark = mark.substring(0, 22);
 
@@ -358,11 +358,11 @@ public class MainActivity extends Activity {
 	}
 
 	public void onQuitGameClicked(View view) {
-		mOpeCenter.quitGame(MainActivity.this, new OnQuitGameFinishedListener() {
+		mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
 
 			@Override
-			public void onQuitGameFinished(boolean success) {
-				if (success) {
+			public void onQuitGame(boolean shouldQuit) {
+				if (shouldQuit) {
 					finish();
 					android.os.Process.killProcess(android.os.Process.myPid());
 				}
@@ -502,16 +502,16 @@ public class MainActivity extends Activity {
 			case KeyEvent.KEYCODE_VOLUME_UP:
 				// do something
 			case KeyEvent.KEYCODE_BACK:
-				mOpeCenter.quitGame(MainActivity.this, new OnQuitGameFinishedListener() {
+			       mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
 
-					@Override
-					public void onQuitGameFinished(boolean success) {
-						if (success) {
-							finish();
-							android.os.Process.killProcess(android.os.Process.myPid());
-						}
-					}
-				});
+			            @Override
+			            public void onQuitGame(boolean success) {
+			                if (success) {
+			                    finish();
+			                    android.os.Process.killProcess(android.os.Process.myPid());
+			                }
+			            }
+			        });
 				break;
 			case KeyEvent.KEYCODE_MENU:
 				// do something
