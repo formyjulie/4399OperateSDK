@@ -55,7 +55,7 @@ private void showCheckResult(UpgradeInfo info) {
 	}  else if (code == UpgradeInfo.APK_CHECK_NEED_UPDATE) {
 		// 有更新内容
 		if (info.haveLocalSrc()) {
-			// 本地已有下载好的更新包，显示“立即更新”, 即开始安装
+			// 本地已有下载好的更新包，显示“立即安装”, 即开始安装
 		} else {
 			// 本地没有下载好的更新包
 			if (info.isCompel()) {

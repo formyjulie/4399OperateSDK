@@ -29,7 +29,7 @@ v2.1.1.12	|   2014-11-21  |   张生    |   增加充值测试模式，游戏退
 &nbsp;&nbsp;&nbsp;&nbsp;[3.4 获取当前登录用户信息](#获取当前登录用户信息)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.5 用户切换](#用户切换)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.6 用户注销](#用户注销)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.7 游戏关闭](#游戏关闭)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.7 游戏关闭【必接】](#游戏关闭)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.8 登录状态查询](#登录状态查询)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.9 获取缓存用户名列表](#获取缓存用户名列表)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.10 删除缓存用户名](#删除缓存用户名)  
@@ -68,7 +68,9 @@ v2.1.1.12	|   2014-11-21  |   张生    |   增加充值测试模式，游戏退
 * 右键点击4399OperateSDK工程名→Properties→Android
 * 勾选Is Library→OK
 * 右键点击project工程名→Properties→Add
-* 在弹出的对话框中点选资源工程m4399OperateSDK→OK
+* 在弹出的对话框中点选资源工程m4399OperateSDK→OK  
+
+若游戏仅支持部分指令集，需要在引入资源工程后将m4399RechargeSDK\lib\目录下未使用的指令集文件夹删除。如游戏仅支持arm6（armeabi），即可将其余的x86、arm64-v8a、armeabi-v7a文件夹删除。
 
 ### 配置AndroidManifest.xml文件
 - 添加SDK所需的权限
