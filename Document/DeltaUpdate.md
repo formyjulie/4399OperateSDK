@@ -13,88 +13,109 @@
 - 接口  
 
 ```java
-OperateCenter.getInstance().checkUpdateApk
+OperateCenter.getInstance().doCheck(MainActivity.this, new OnCheckFinishedListener() {
+	/**
+ 	 * 检查新版本后，返回的新版本信息
+ 	 * @param checkResultInfo 新版本信息的对象 里面包括服务端返回的升级信息
+ 	 */
+	@Override
+	public void onCheckResponse(UpgradeInfo upgradeInfo) {
+		// 接入者可以在这里显示检查结果，检查结果由UpgradeInfo封装
+	}
+});
 ```
 - 参数  
 
 | 参数值 | 说明 |
-|-------|------|
+|-------|------	|
 |Context|Activity的上下文|
-|OnCheckFinishedListener|请求结果回调|
+|OnCheckFinishedListener|请求结果回调，监听器用于返回请求新版本的信息|
 
-
-`OnCheckFinishedListener`监听器用于返回请求新版本的信息；  
-
-```java
-/**
- * 检查新版本后，返回的新版本信息
- * @param checkResultInfo 新版本信息的对象 里面包括服务端返回的升级信息
- * @param newApkFilePath  如果新版本已经下载完毕，则同时返回新版本文件路径； 否则 返回null
- */
- public void onCheckResponse(ApkCheckResult checkResultInfo, String newApkFilePath);
-```
-
-`ApkCheckResult`是一个新版本检查结果，主要公有方法：
--`getCode` 网络请求返回码
--`getNewApkInfo` 新版本信息，是一个`GameUpgradeInfo`对象
-
-## 1.2 显示版本升级信息
-1. 判断`onCheckResponse`回调返回的`checkResultInfo.getCode()`是否为成功；
-2. 如果成功，`checkResultInfo.getNewApkInfo()`获取新版本信息，用于显示升级弹窗界面；
-
-其中公有方法：  
+`UpgradeInfo` 封装了检查版本后，显示给用户的必要的信息，其中共有方法：
 
 | 方法名 | 说明 |
 |-------|------|
-|getUpdateMsg    |获取升级的log信息|
-|getVersion      |获取版本名字|
-|getPatchSize    |获取补丁大小|
-|getGameSize     |获取游戏包的大小|
-|checkHavePatch  |判断是否有增量包 true代表补丁包； false代表全包下载|
+|getResultCode	 |获取检查结果状态码
+|getResultMsg    |获取检查结果提示信息|
+|getUpgradeType  |获取更新类型， 1为增量更新，0为全量更新|
+|getVersionName	 |获取线上最新版本VersionName|
+|getVersionCode  |获取线上最新版本Versioncode|
+|getUpgradeMsg	 |获取线上最版本的更新内容提示，如新增什么活动，调整什么装备属性等|
+|getUpgradeTime  |获取线上最新版本发布时间|
+|getUpgradeSize  |获取本次更新需要下载包的大小|
+|getNewApkSize   |获取线上最新版本APK大小|
+|haveLocalSrc    |本地是否有已经下载好的更新包，true表示有，false表示没有|
 |isCompel        |判断是否强制升级|
-|getDate         |获取新版本发布日期|
 
+## 1.2 显示检查结果
+```java
+private void showCheckResult(UpgradeInfo info) {
+	int code = info.getResultCode();
 
-## 1.3 启动升级
+	if (code == UpgradeInfo.APK_CHECK_NO_UPDATE) {
+		// 没有更新，这里可以选择不提示
+	}  else if (code == UpgradeInfo.APK_CHECK_NEED_UPDATE) {
+		// 有更新内容
+		if (info.haveLocalSrc()) {
+			// 本地已有下载好的更新包，显示“立即更新”
+		} else {
+			// 本地没有下载好的更新包
+			if (info.isCompel()) {
+				// 强制更新
+			} else {
+				// 非强制更新
+			}
+		}
+	
+	} else {
+		// 检查更新失败，根据需要决定是否显示失败信息
+	}
+}
+```
+
+## 1.3 下载更新包
 ### 接口
 ```java
-OperateCenter.getInstance().doUpdate
+/**
+ * @param MainActivity.this Actvity上下文
+ * @param OnDownloadListener 下载监听器，返回下载过程各个阶段的信息
+ */
+OperateCenter.getInstance().doDownload(MainActivity.this, new OnDownloadListener() {
+
+	@Override
+	public void onDownloadStart() {
+		// 开始下载
+	}
+	
+	/**
+	 * @param progress 已下载的字节数，单位B
+	 * @param max	   总的字节数， 单位B
+	 */
+	@Override
+	public void onDownloadProgress(long progress, long max) {
+		// 正在下载
+	}
+	
+	@Override
+	public void onDownloadSuccess() {
+		// 下载成功, 可以提醒安装
+	}
+	
+	/**
+	 * @param resultCode, 下载失败时的HttpCode，由网络层返回
+	 * @param eMsg, 下载失败时的出错信息，由网络层返回（英文字符）
+	 */
+	@Override
+	public void onDownloadFail(int resultCode, String eMsg) {
+		// 下载失败
+	}
 ```
-### 传入参数
-| 参数值 | 说明 |
-|-------|------|
-|Context|Activity的上下文|
-|OnUpdateListener|升级过程的监听器，反馈进度和升级结果|
-
-
-附：`OnUpdateListener`监听器的定义如下：  
+## 1.4 安装更新包
 ```java
- public interface OnUpdateListener
-    {
-	/**
-	 *
-	 * Description: 更新完成
-	 *
-	 * @param success 是否成功
-	 * @param resultCode 操作返回码
-	 */
-	public void onUpdateSuccess(File newApkFile);
-	public void onUpdateFail(int resultCode);
-	
-	/**
-	 * 检查新版本后，返回的新版本信息
-	 * @param checkResultInfo 新版本信息的对象 里面包括服务端返回的升级信息
-	 */
-	public void onUpdateStart();
-	
-	/**
-	 * 升级过程，下载补丁包或全包的进度；
-	 * 如果服务端有生成对应的补丁包，就下载补丁包，sdk帮忙做合成补丁包为新版的apk；
-	 * 
-	 * @param progress 	当前已下载的大小
-	 * @param max	      	文件的总大小
-	 */
-	public void onUpdateProgress(long progress, long max);
-	
-    }
+/*
+ * 下载成功后，或者本地已有下载好的更新包时，可以调用此函数
+ * SDK会更加是增量更新还是全量更新采取不同的安装方式
+ */
+OperateCenter.getInstance().doInstall();
 ```
+
