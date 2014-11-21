@@ -130,6 +130,7 @@ mOpeCenter = OperateCenter.getInstance();
 mOpeConfig = new OperateCenterConfig.Builder(this)
 	.setGameKey("GAME_KEY")     //设置GameKey
 	.setDebugEnabled(false)     //设置DEBUG模式,用于接入过程中开关日志输出，发布前必须设置为false或删除该行。默认为false。
+	.setTestRecharge(false)	    // 充值测试模式开关控制
 	.setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //设置横竖屏方向，默认为横屏，现支持横竖屏，和180度旋转
 	.setSupportExcess(true)     //设置服务端是否支持处理超出部分金额，默认为false
 	.setPopLogoStyle(PopLogoStyle.POPLOGOSTYLE_ONE) //设置悬浮窗样式，现有四种可选
@@ -150,6 +151,12 @@ mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
 		//游戏注销逻辑
 	}
 });
+```
+`充值测试模式`
+```
+在充值测试模式下，充值时，SDK只用一些固定参数调用下单接口，让服务器去模拟整个充值和回调过程，
+ 最后服务器将充值结果返回给SDK显示，以测试游戏充值配置是否正确。
+完成测试后，要关闭此开关，再进行正式的各个渠道的测试。
 ```
 
 `是否支持处理超出部分金额`也可单独设置
@@ -231,6 +238,19 @@ mOpeCenter.logout(new OnLogoutFinishedListener() {
 	}
 });
 ```
+## 游戏关闭
+```java
+// 游戏关闭前，SDK会弹出对话框询问“退出游戏”还是“前往游戏圈”
+mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
+
+	@Override
+	public void onQuitGame(boolean shouldQuit) {
+		// 点击“退出游戏”时，shouldQuit为true，游戏处理自己的退出业务逻辑
+		// 点击“前往游戏圈”时，shouldQuit为false，SDK会进入游戏圈或者下载
+		// 	游戏圈界面，游戏可以不做处理。
+	}
+});
+```
 
 ## 登录状态查询
 查询当前客户端是否有账号登录
@@ -267,27 +287,28 @@ SDK将检查后台是否有新版本游戏上线，如果有，则显示更新�
 *特别注意：mark为游戏方订单号，最大长度32位，由包含字母或数字组成的唯一字符串，该字段不可为空，不可重复。*  
 ```java
 mOpeCenter.recharge(MainActivity.this,
-				je,             //充值金额（元）
-				mark,           //游戏方订单号
-				productName,    //商品名称
-				new OnRechargeFinishedListener() {
-
-				    @Override
-				    public void onRechargeFinished(
-					    boolean success, int resultCode,
-					    String msg)
-				    {
-			            if(success){
-			                //请求游戏服，获取充值结果
-			            }else{
-			                //充值失败逻辑
-			            }
-				    }
-				});
+	je,     	//整型，充值金额（元）
+	mark,   	//游戏方订单号
+	productName,    //商品名称
+	new OnRechargeFinishedListener() {
+		@Override
+		public void onRechargeFinished(boolean success, int resultCode, String msg) {
+			if (success) {
+				//请求游戏服，获取充值结果
+			}else{
+				//充值失败逻辑
+			}
+		}
+});
 ```
-* `je`充值金额：4399充值中心仅支持整数金额充值，最小充值金额`1`元，最大不超过`50000`元。
-* `mark`订单号：最大长度32位，由包含字母或数字组成的唯一字符串，该字段不可为空。
+* `je`充值金额：整型数字，4399充值中心仅支持整数金额充值，最小充值金额`1`元，最大不超过`50000`元。
+* `mark`订单号：最大长度32位，支持大小写字母、数字、‘|’(竖线)、‘-’（中划线）、‘_’（下划线），该字段不可为空。
 * `productName`商品名称：最长不超过8个字符。 如果传入商品名，充值中心将直接显示改商品名称，如果充值金额大于下单时传入的`je`时，将显示商品名+XXX游戏币，相关游戏币的兑换比例在接入时提供给运营人员配置。如果未传入商品名，则直接显示XXX游戏币。
+
+## 获取SDK版本号
+```java
+mOpeCenter.getVersion();
+```
 
 ## 获取状态信息
 工具接口，用于将回调函数中的`resultCode`解析为中文的说明(充值接口recharge的resultCode对应的中文是回调中的msg)。
