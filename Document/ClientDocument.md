@@ -1,4 +1,4 @@
-4399运营SDK Android客户端v2.1.1.12接入说明
+4399运营SDK Android客户端v2.1.1.13接入说明
 ======================
 
 ##修改记录
@@ -9,7 +9,7 @@ v1.0.1  |   2014-07-14  |   张生    |   增加部分接口参数的说明
 v2.0.0  |   2014-08-22  |   郑旭    |   增加全局监听、修改SDK部署配置、修改部分接口调用方式
 v2.1.0  |   2014-10-14  |   郑旭    |   移除悬浮窗配置接口，移除自动更新接口，新增自定义更新接口，替换移动短代运营商配置
 v2.1.1.12	|   2014-11-21  |   张生    |   增加充值测试模式，游戏退出接口，获取SDK版本号接口说明，mark字符扩展，充值金额改为整型
-
+v2.1.1.13|  2014-11-22  |   张生    |   增加游戏圈不存在时游戏退出的弹框
 #目录
 
 [1 文档说明](#文档说明)  
@@ -260,16 +260,15 @@ mOpeCenter.logout(new OnLogoutFinishedListener() {
 ## 游戏关闭
 ```java
 // 如果游戏已经配置游戏圈， 则在关闭前，SDK会弹出对话框询问“退出游戏”还是“前往游戏圈”
-// 若没有则不会弹框，但依然会调用onQuitGame方法
+// 如果还没有配置，SDK弹框会提示“退出游戏”还是“留在游戏”
 mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
 
 	@Override
 	public void onQuitGame(boolean shouldQuit) {
-		// 如果游戏还没有配置游戏圈，shouldQuit会直接返回true
-		
 		// 点击“退出游戏”时，shouldQuit为true，游戏处理自己的退出业务逻辑
 		// 点击“前往游戏圈”时，shouldQuit为false，SDK会进入游戏圈或者下载
 		// 	游戏盒子界面，游戏可以不做处理。
+		// 点击“留在游戏”时，shouldQuit为false，SDK和游戏都不做任何处理
 	}
 });
 ```
