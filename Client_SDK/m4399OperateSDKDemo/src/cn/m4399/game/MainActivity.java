@@ -1,4 +1,4 @@
-package cn.m4399.game;
+﻿package cn.m4399.game;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
 		    .setOrientation(orientation)
 			.setPopLogoStyle(getPopStylePreference())
 			.setSupportExcess(true)
-			.setGameKey("40001")
+			.setGameKey("40027")
 			.setGameName("测试游戏")
 			.build();
 		mOpeCenter.setConfig(mOpeConfig);
