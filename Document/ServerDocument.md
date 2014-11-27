@@ -21,16 +21,13 @@
 ### 请求参数
    字段    |   必填    |   数据类型    |   说明    
 -----------|-----------|---------------|-----------
-uid|是|int|用户ID，my平台的用户uid 
 state|是|string|登录后SDK获取的服务端TOKEN
-key|是|int|SDK提供的GAME_KEY
-sign|是|string|加密签名，签名计算为：md5(`$key`.`$uid`.`$state`.`$secrect`); 详见[签名说明](#签名说明)。
 
 ### 返回结果
 ```json
 {
     "code":100,
-    "result":null,
+    "result":{"uid":"1"},
     "message":"验证成功"
 }
 
@@ -39,9 +36,9 @@ sign|是|string|加密签名，签名计算为：md5(`$key`.`$uid`.`$state`.`$se
 
 参数名| 说明
 -------|-----
-code        |状态码:<BR/>`100`:验证成功；<BR/>`87`:参数不全；<BR/>`86`:签名错误；<BR/>`85`:验证失败  
+code        |状态码:<BR/>`100`:验证成功<BR/>`87`:参数不全<BR/>`85`:验证失败  <BR/>`82`:验证成功、但state有效期超时，重置state
 message     |对应`code`的返回值描述
-result      |空值（无作用）
+result      |返回当前登录用户的 uid
 
 
 ## 充值回调接口
