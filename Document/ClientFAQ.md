@@ -50,8 +50,13 @@ A: 是4399的订单号
 Q: 为什么移动充值界面会显示异常——标题为"手机话费支付（自测试）"， 应用名称与提供商都是一串数字  
 A: 移动充值机jar包Cartoonsmsbilling1.0.0.jar里包含一个iap_corp.xml文件，此文件配置了页面显示内容。
    在*Unity3D*游戏中，此文件可能会找不到，需要以下额外操作：
-   > - 将Cartoonsmsbilling1.0.0.jar包解开，把里面的iap_corp.xml 拷贝到APK的根目录下
-   > - 重新打包签名验证
+   > - 将Cartoonsmsbilling1.0.0.jar包解开，提取里面的iap_corp.xml
+   > - 将iap_corp.xml追加到游戏APK中：./aapt a yourgame.apk iap_corp.xml
+   > - 删除原有的失效的签名文件：zip -d yourgame.apk "META-INF*"
+   > - 重新签名：jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore your_keystore.keystore compiled.apk your_alias_name
+   > - 后期处理： ./zipalign -v 4 compiled.apk yourgame_resigned.apk
+   
+   更多内容参考：https://laoyur.com/?p=528
 
 调试及测试
 -----------------
