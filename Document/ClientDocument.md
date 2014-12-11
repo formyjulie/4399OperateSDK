@@ -24,7 +24,7 @@ v2.1.1.13|  2014-11-22  |   张生    |   增加游戏圈不存在时游戏退�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.2.3 代码混淆配置](#代码混淆配置)  
 [3 接入流程](#接入流程)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.1 初始化【必接】](#初始化与析构)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.2 登录状态查询](#登录状态查询)
+&nbsp;&nbsp;&nbsp;&nbsp;[3.2 登录状态查询](#登录状态查询)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.3 用户登录【必接】](#用户登录)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.4 获取当前登录用户信息](#获取当前登录用户信息)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.5 用户切换](#用户切换)  
