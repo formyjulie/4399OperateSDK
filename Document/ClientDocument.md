@@ -24,21 +24,20 @@ v2.1.1.13|  2014-11-22  |   张生    |   增加游戏圈不存在时游戏退�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.2.3 代码混淆配置](#代码混淆配置)  
 [3 接入流程](#接入流程)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.1 初始化【必接】](#初始化与析构)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.2 设置切换用户监听器](#设置切换用户监听器)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.2 登录状态查询](#登录状态查询)
 &nbsp;&nbsp;&nbsp;&nbsp;[3.3 用户登录【必接】](#用户登录)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.4 获取当前登录用户信息](#获取当前登录用户信息)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.5 用户切换](#用户切换)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.6 用户注销](#用户注销)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.7 游戏关闭【必接】](#游戏关闭)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.8 登录状态查询](#登录状态查询)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.9 获取缓存用户名列表](#获取缓存用户名列表)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.10 删除缓存用户名](#删除缓存用户名)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.11 设置用户所在服务器ID【必接】](#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%89%80%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8id)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.12 检查更新](#检查更新)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.13 充值【必接】](#充值)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.14 获取SDK版本号](#获取SDK版本号)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.15 获取状态信息](#获取状态信息)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.16 析构【必接】](#析构)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.8 获取缓存用户名列表](#获取缓存用户名列表)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.9 删除缓存用户名](#删除缓存用户名)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.10 设置用户所在服务器ID【必接】](#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%89%80%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8id)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.11 检查更新](#检查更新)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.12 充值【必接】](#充值)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.13 获取SDK版本号](#获取SDK版本号)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.14 获取状态信息](#获取状态信息)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.15 析构【必接】](#析构)  
 # 文档说明
 ## 功能描述
 4399运营SDK（以下简称：SDK）主要用来向第三方游戏开发者提供便捷、安全一级可靠的4399账户登录、多渠道充值付费、版本升级检测等功能。本文主要描述SDK接口的使用方法，供合作伙伴的开发者接入使用。
@@ -87,24 +86,30 @@ v2.1.1.13|  2014-11-22  |   张生    |   增加游戏圈不存在时游戏退�
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
-        <!-- For 4399 Recharge SDK -->
+        <!-- For 4399 recharging SDK. 请不要在此处修改RechargeActivity的方向设置，因为某些2。3的机型启动Activity总是先启动
+          	竖屏，然后强制转换成横屏，这会导致潜在问题. -->
         <activity
             android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
             android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="behind"
             android:theme="@style/m4399ActivityTheme" />
 
         <!-- For 4399 Operation SDK -->
         <activity
             android:name="cn.m4399.operate.ui.activity.LoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:theme="@style/m4399TransparentStyle" />
         <activity
             android:name="cn.m4399.operate.ui.activity.UserCenterActivity"
             android:hardwareAccelerated="false"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
+            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
             
@@ -148,13 +153,20 @@ mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
 	public void onInitFinished(boolean isLogin, User userInfo)
 	{
 		//初始化完成后操作（例如检查当前登录状态）
+		assert(isLogin == mOpeCenter.isLogin());
 	}
 
-   //用户通过悬浮窗-个人中心-注销成功时SDK调用该回调
+	// 注销帐号的回调， 包括个人中心里的注销和logout()注销方式
 	@Override
 	public void onUserAccountLogout()
 	{
 		//游戏注销逻辑
+	}
+	
+	// 个人中心里切换帐号的回调
+	@Override
+	public void onSwitchUserAccountFinished(User userInfo) {
+		Log.d(TAG, "Switch Account: " + userInfo.toString());
 	}
 });
 ```
@@ -196,19 +208,6 @@ mOpeCenter.setSupportExcess(support);
 |PopWinPosition.POS_RIGHT|屏幕右侧|
 |PopWinPosition.POS_TOP|屏幕上侧|
 |PopWinPosition.POS_BOTTOM|屏幕下侧|
-
-
-
-## 设置切换用户监听器
-用户在个人中心中成功切换账户后，SDK将检测游戏方是否有设置切换用户监听器。如果有，SDK建在切换成功后自动执行游戏方提供的逻辑，如果没有，SDK将强制应用重新启动，以达到切换账号的效果。建议游戏接入本接口以提升用户体验。
-```java
-mOpeCenter.setSwitchUserAccountListener(new OnSwitchUserAccountListener()
-{
-    public void onSwitchUserAccountFinished(User userInfo){
-        //游戏切换账号逻辑
-    }
-});
-```
 
 ## 用户登录
 用户在触发登录时，调用该接口，如果SDK内已包含未注销的用户凭证，将自动返回用户信息。如需强制调出登录界面，请使用【用户切换】接口。
