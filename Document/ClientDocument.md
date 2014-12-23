@@ -242,9 +242,9 @@ mOpeCenter.switchAccount(MainActivity.this, new OnLoginFinishedListener() {
 ```
 
 ## 用户注销  
-当用户需要注销当前登录状态时，使用本接口
+当用户需要注销当前登录状态时，使用本接口，其回调函数在OnInitGloabListener中
 ```java
-	mOpeCenter.logout();
+mOpeCenter.logout();
 ```
 
 ## 游戏关闭
