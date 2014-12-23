@@ -29,15 +29,16 @@ v2.2.0.2 |  2014-12-22  |   张生    |   调整移动短代策略，登出接�
 &nbsp;&nbsp;&nbsp;&nbsp;[3.3 用户登录【必接】](#用户登录)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.4 获取当前登录用户信息](#获取当前登录用户信息)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.5 用户切换](#用户切换)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.6 游戏关闭【必接】](#游戏关闭)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.7 获取缓存用户名列表](#获取缓存用户名列表)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.8 删除缓存用户名](#删除缓存用户名)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.9 设置用户所在服务器ID【必接】](#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%89%80%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8id)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.10 检查更新](#检查更新)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.11 充值【必接】](#充值)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.12 获取SDK版本号](#获取SDK版本号)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.13 获取状态信息](#获取状态信息)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.14 析构【必接】](#析构)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.6 用户切换](#用户注销)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.7 游戏关闭【必接】](#游戏关闭)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.8 获取缓存用户名列表](#获取缓存用户名列表)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.9 删除缓存用户名](#删除缓存用户名)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.10 设置用户所在服务器ID【必接】](#%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%89%80%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8id)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.11 检查更新](#检查更新)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.12 充值【必接】](#充值)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.13 获取SDK版本号](#获取SDK版本号)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.14 获取状态信息](#获取状态信息)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.15 析构【必接】](#析构)  
 # 文档说明
 ## 功能描述
 4399运营SDK（以下简称：SDK）主要用来向第三方游戏开发者提供便捷、安全一级可靠的4399账户登录、多渠道充值付费、版本升级检测等功能。本文主要描述SDK接口的使用方法，供合作伙伴的开发者接入使用。
@@ -238,6 +239,12 @@ mOpeCenter.switchAccount(MainActivity.this, new OnLoginFinishedListener() {
 	    //用户账号切换结束后的游戏逻辑
 	}
 });
+```
+
+## 用户注销  
+当用户需要注销当前登录状态时，使用本接口
+```java
+	mOpeCenter.logout();
 ```
 
 ## 游戏关闭
