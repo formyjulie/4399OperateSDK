@@ -140,7 +140,6 @@ mOpeCenter = OperateCenter.getInstance();
 mOpeConfig = new OperateCenterConfig.Builder(this)
 	.setGameKey("GAME_KEY")     //设置GameKey
 	.setDebugEnabled(false)     //设置DEBUG模式,用于接入过程中开关日志输出，发布前必须设置为false或删除该行。默认为false。
-	.setTestRecharge(false)	    // 充值测试模式开关控制
 	.setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //设置横竖屏方向，默认为横屏，现支持横竖屏，和180度旋转
 	.setSupportExcess(true)     //设置服务端是否支持处理超出部分金额，默认为false
 	.setPopLogoStyle(PopLogoStyle.POPLOGOSTYLE_ONE) //设置悬浮窗样式，现有四种可选
@@ -165,12 +164,6 @@ mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
 	public void onSwitchUserAccountFinished(User userInfo) {
 	}
 });
-```
-`充值测试模式`
-```
-在充值测试模式下，充值时，SDK只用一些固定参数调用下单接口，让服务器去模拟整个充值和回调过程，
-最后服务器将充值结果返回给SDK显示，以测试游戏充值配置是否正确。
-完成测试后，要关闭此开关，再进行正式的各个渠道的测试。
 ```
 
 `是否支持处理超出部分金额`也可单独设置
