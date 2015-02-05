@@ -148,7 +148,7 @@ mOpeConfig = new OperateCenterConfig.Builder(this)
 	.setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)  //设置横竖屏方向，默认为横屏，现支持横竖屏，和180度旋转
 	.setSupportExcess(true)     //设置服务端是否支持处理超出部分金额，默认为false
 	.setPopLogoStyle(PopLogoStyle.POPLOGOSTYLE_ONE) //设置悬浮窗样式，现有四种可选
-	.setsetPopWinPosition(PopWinPosition.POS_LEFT)	//设置悬浮窗默认显示位置，现有四种可选
+	.setPopWinPosition(PopWinPosition.POS_LEFT)	//设置悬浮窗默认显示位置，现有四种可选
 	.build();
 mOpeCenter.setConfig(mOpeConfig);
 mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
