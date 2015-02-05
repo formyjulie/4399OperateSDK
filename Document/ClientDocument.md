@@ -1,4 +1,4 @@
-4399运营SDK Android客户端v2.1.1.13接入说明
+﻿4399运营SDK Android客户端v2.1.1.13接入说明
 ======================
 
 ##修改记录
@@ -84,7 +84,7 @@ v2.3.0.0 |  2015-01-27  |   张生    |   支付宝升级和优化，增加充�
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.SEND_SMS" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
@@ -115,8 +115,12 @@ v2.3.0.0 |  2015-01-27  |   张生    |   支付宝升级和优化，增加充�
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
             
 	<!--------以下为第三方支付SDK Activity&Service配置------------>
-        <activity android:name="com.alipay.sdk.app.H5PayActivity" 
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`
 
