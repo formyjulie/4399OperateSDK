@@ -79,8 +79,8 @@ A: 有的，您可用logcat查看日志，快速定位问题。
 setDebugEnabled为true后，就能打印出各个逻辑的log。
 
 **Q:接入过程中遇到java.lang.NoClassDefFoundError. ... . OpeInitilizer$ChannelServiceConnection...怎么办？**  
-A: 这主要出现在Unity3D引擎的游戏中。打包过程丢失了AIDL调用的接口。解决方法是，将导出结束后同时生成的**aidl.jar**
-和其他导出的jar包放在同一目录即可。
+A: 这主要出现在Unity3D引擎的游戏中。打包过程丢失了AIDL调用的接口。解决方法是，将导出完成后同时生成的**aidl.jar**
+与其他jar包放在同一目录即可。
 
 **Q:游戏为横屏，但sdk弹出的界面为竖屏。**     
 A:我们sdk支持横竖屏配置，使用接口OperateCenterConfig.Builder(this).setOrientation(orientation)设置，也可以在AndroidManifest.xml 中设置screenOrientation = "landscape".但是某些第三方界面，如支付宝界面，只能在AndroidManifest.xml中设置。
