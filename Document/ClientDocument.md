@@ -188,10 +188,10 @@ mOpeCenter.setSupportExcess(support);
 
 |样式类型|图示|
 |--------|----|
-|PopLogoStyle.POPLOGOSTYLE_ONE|<img src="res/drawable-hdpi/m4399_ope_pop_logo_one_normal.png" alt="POPLOGOSTYLE_ONE" />|
-|PopLogoStyle.POPLOGOSTYLE_TWO|<img src="res/drawable-hdpi/m4399_ope_pop_logo_two_normal.png" alt="POPLOGOSTYLE_TWO" />|
-|PopLogoStyle.POPLOGOSTYLE_THREE|<img src="res/drawable-hdpi/m4399_ope_pop_logo_three_normal.png" alt="POPLOGOSTYLE_THREE" />|
-|PopLogoStyle.POPLOGOSTYLE_FOUR|<img src="res/drawable-hdpi/m4399_ope_pop_logo_four_normal.png" alt="POPLOGOSTYLE_FOUR" />|
+|PopLogoStyle.POPLOGOSTYLE_ONE|<img src="res/m4399_ope_pop_logo_one_normal.png" alt="POPLOGOSTYLE_ONE" />|
+|PopLogoStyle.POPLOGOSTYLE_TWO|<img src="res/m4399_ope_pop_logo_two_normal.png" alt="POPLOGOSTYLE_TWO" />|
+|PopLogoStyle.POPLOGOSTYLE_THREE|<img src="res/m4399_ope_pop_logo_three_normal.png" alt="POPLOGOSTYLE_THREE" />|
+|PopLogoStyle.POPLOGOSTYLE_FOUR|<img src="res/m4399_ope_pop_logo_four_normal.png" alt="POPLOGOSTYLE_FOUR" />|
 
 * 悬浮窗默认位置
 游戏开发者可根据游戏的风格自由选择合适的悬浮窗初始化的默认位置，在配置SDK时设置。 
