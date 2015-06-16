@@ -1,4 +1,4 @@
-﻿4399运营SDK Android客户端v2.1.1.13接入说明
+4399运营SDK Android客户端v2.1.1.13接入说明
 ======================
 
 ##修改记录
@@ -12,7 +12,8 @@ v2.1.1.12	|   2014-11-21  |   张生    |   增加充值测试模式，游戏退
 v2.1.1.13|  2014-11-22  |   张生    |   增加游戏圈不存在时游戏退出的弹框  
 v2.2.0.2 |  2014-12-22  |   张生    |   调整移动短代策略，登出接口和帐号切换接口合并到初始化全局接口里  
 v2.3.0.0 |  2015-01-27  |   张生    |   支付宝升级和优化，增加充值审核模式，去除冗余的参数配置，新增意见反馈和消息推送入口  
-v2.4.0.5 |  2015-0425   |   张生    |   优化消息中心与用户反馈功能，增加用户中心维护公告，增加历史订单查看功能  
+v2.4.0.5 |  2015-04-25  |   张生    |   优化消息中心与用户反馈功能，增加用户中心维护公告，增加历史订单查看功能  
+v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支付宝，对Android5.0进行一些兼容  
 #目录
 
 [1 文档说明](#文档说明)  
@@ -77,15 +78,22 @@ v2.4.0.5 |  2015-0425   |   张生    |   优化消息中心与用户反馈功�
 ### 配置AndroidManifest.xml文件
 - 添加SDK所需的权限
 ``` xml
-<uses-permission android:name="android.permission.CALL_PHONE"/>
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" 	/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.SEND_SMS" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Common permission -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- For Dial custom service hotline -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- SMS pay permission -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Alipay permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
@@ -114,6 +122,19 @@ v2.4.0.5 |  2015-0425   |   张生    |   优化消息中心与用户反馈功�
             android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <service
+            android:name="cn.m4399.recharge.service.smsm.SmsmService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="system" >
+        </service>
+
+        <receiver android:name="cn.m4399.recharge.service.smsm.SmsmStartReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
             
 	<!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity
