@@ -14,6 +14,7 @@ v2.2.0.2 |  2014-12-22  |   张生    |   调整移动短代策略，登出接�
 v2.3.0.0 |  2015-01-27  |   张生    |   支付宝升级和优化，增加充值审核模式，去除冗余的参数配置，新增意见反馈和消息推送入口  
 v2.4.0.5 |  2015-04-25  |   张生    |   优化消息中心与用户反馈功能，增加用户中心维护公告，增加历史订单查看功能  
 v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支付宝，对Android5.0进行一些兼容  
+v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或接入请联系运营）  
 #目录
 
 [1 文档说明](#文档说明)  
@@ -32,7 +33,7 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
 &nbsp;&nbsp;&nbsp;&nbsp;[3.3 用户登录【必接】](#用户登录)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.4 获取当前登录用户信息](#获取当前登录用户信息)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.5 用户切换](#用户切换)  
-&nbsp;&nbsp;&nbsp;&nbsp;[3.6 用户切换](#用户注销)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3.6 用户注销](#用户注销)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.7 游戏关闭【必接】](#游戏关闭)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.8 获取缓存用户名列表](#获取缓存用户名列表)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3.9 删除缓存用户名](#删除缓存用户名)  
@@ -94,6 +95,8 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Alipay permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Weixin permission -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
@@ -101,9 +104,15 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
           	竖屏，然后强制转换成横屏，这会导致潜在问题. -->
         <activity
             android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
-            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/m4399ActivityTheme"/>
+            android:launchMode="singleTask"
+            android:exported="true"
+            android:theme="@style/m4399ActivityTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="微信APP_ID"/>
+            </intent-filter>
 
         <!-- For 4399 Operation SDK -->
         <activity
@@ -136,13 +145,20 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
             </intent-filter>
         </receiver>
             
-	<!--------以下为第三方支付SDK Activity&Service配置------------>
+		<!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- For Weixin SDK, xx.xx.xx为应用包名，此处不可改成其他包路径 -->
+        <activity
+            android:name="xx.xx.xx.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:noHistory="true" />
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`
 
@@ -334,7 +350,7 @@ mOpeCenter.recharge(MainActivity.this,
 * `je`充值金额：整型数字，4399充值中心仅支持整数金额充值，最小充值金额`1`元，最大不超过`50000`元。
 * `mark`订单号：最大长度32位，支持大小写字母、数字、‘|’(竖线)、‘-’（中划线）、‘_’（下划线），该字段*不可为空，不可为字符串“0”，不可重复*。
 * `productName`商品名称：最长不超过8个字符。 如果传入商品名，充值中心将直接显示改商品名称，如果充值金额大于下单时传入的`je`时，将显示商品名+XXX游戏币，相关游戏币的兑换比例在接入时提供给运营人员配置。如果未传入商品名，则直接显示XXX游戏币。
-*   
+
 
 <b>关于充值审核模式</b>
 - 充值审核模式主要是用于游戏方测试充值回调  
