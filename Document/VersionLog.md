@@ -6,10 +6,10 @@
 - 修复一些bug
 
 **注意：微信支付接入流程比较复杂，需要一些操作**
-1.在微信开放平台注册游戏APK包名，生成APP_ID
-2.使用微信开放平台提供的工具生成APK的sign值，并填入开放平台
-3.接入4399SDK，要更新AndroidManefest.xml中的配置
-4.添加回调Activity
+1.在微信开放平台注册游戏APK包名，生成APP_ID  
+2.使用微信开放平台提供的工具生成APK的sign值，并填入开放平台  
+3.接入4399SDK，要更新AndroidManefest.xml中的配置  
+4.添加回调Activity  
 - 创建(游戏包名.wapi)的包路径，比如org.yjmobile.zmxy.wxapi；
 - 将WXPayEntryActivity.java拷贝到下面
 - 用开放平台生成的APP_ID更新文件中的相应字段
