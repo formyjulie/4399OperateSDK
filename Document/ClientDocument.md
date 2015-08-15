@@ -1,4 +1,4 @@
-4399运营SDK Android客户端v2.1.1.13接入说明
+4399运营SDK Android客户端接入说明
 ======================
 
 ##修改记录
@@ -15,6 +15,7 @@ v2.3.0.0 |  2015-01-27  |   张生    |   支付宝升级和优化，增加充�
 v2.4.0.5 |  2015-04-25  |   张生    |   优化消息中心与用户反馈功能，增加用户中心维护公告，增加历史订单查看功能  
 v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支付宝，对Android5.0进行一些兼容  
 v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或接入请联系运营）  
+v2.5.0.0 |  2015-08-15  |   张生    |   补充游戏退出时的说明，修改关联资源工程处的错误说明，优化一些代码格式
 #目录
 
 [1 文档说明](#文档说明)  
@@ -51,10 +52,10 @@ v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或�
 本文档面向具有一定Android客户端开发能力，了解Android客户端的开发和管理人员。
 
 ## 开发包内容
-
  - m4399OperateSDKDemo.apk：当前版本SDK Demo 的APK包
  - m4399RechargeSDK：SDK资源文件工程内含SDK jar包
- - m4399OperateSDKDemo工程：Demo工程
+ - m4399OperateSDKDemo工程：Demo工程  
+ - release-note.txt：当前版本主要更新点，接入流程的变化或接入注意事项
 
 # 集成流程
 ## 接入前期准备
@@ -66,15 +67,14 @@ v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或�
 ## SDK集成流程
 假设现在你的工程目录名字叫project，下面将具体介绍如何将SDK接入project中。
 
-### 关联资源工程
-1. 将m4399OperateSDK工程关联到project
-* 将m4399OperateSDK导入到eclipse中
-* 右键点击4399OperateSDK工程名→Properties→Android
+### 关联资源工程  
+* 将m4399RechargeSDK导入到eclipse中
+* 右键点击m4399RechargeSDK工程名→Properties→Android
 * 勾选Is Library→OK
 * 右键点击project工程名→Properties→Add
-* 在弹出的对话框中点选资源工程m4399OperateSDK→OK  
+* 在弹出的对话框中点选资源工程m4399RechargeSDK→OK  
 
-若游戏仅支持部分指令集，需要在引入资源工程后将m4399RechargeSDK\lib\目录下未使用的指令集文件夹删除。如游戏仅支持arm6（armeabi），即可将其余的x86、arm64-v8a、armeabi-v7a文件夹删除。
+若游戏仅支持部分指令集，需要在引入资源工程后将`m4399RechargeSDK/lib`目录下未使用的指令集文件夹删除。如游戏仅支持arm6（armeabi），即可将其余的x86、arm64-v8a、armeabi-v7a文件夹删除。
 
 ### 配置AndroidManifest.xml文件
 - 添加SDK所需的权限
@@ -95,8 +95,6 @@ v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或�
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Alipay permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- Weixin permission -->
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
@@ -107,12 +105,7 @@ v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或�
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:exported="true"
-            android:theme="@style/m4399ActivityTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="微信APP_ID"/>
-            </intent-filter>
+            android:theme="@style/m4399ActivityTheme" />
 
         <!-- For 4399 Operation SDK -->
         <activity
@@ -152,18 +145,11 @@ v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或�
             android:exported="false"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <!-- For Weixin SDK, xx.xx.xx为应用包名，此处不可改成其他包路径 -->
-        <activity
-            android:name="xx.xx.xx.wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay"
-            android:noHistory="true" />
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`
 
 ### 代码混淆配置
-如果游戏有需要进行代码混淆，请不要混淆联编的jar包下的类，可以在`proguard.cfg`文件里追加以下配置排除SDK jar包中得类
+如果游戏有需要进行代码混淆，请不要混淆联编的jar包下的类，可以在`proguard.cfg`文件里追加以下配置
 
 ```
 -dontwarn android.support.v4.**
@@ -197,7 +183,7 @@ mOpeCenter.init(new OperateCenter.OnInitGloabListener() {
 	}
 
 	// 注销帐号的回调， 包括个人中心里的注销和logout()注销方式
-	// fromUserCenter区分是否是从个人中心注销的，若是则为true，不是为false
+	// fromUserCenter区分是否是从悬浮窗-个人中心注销的，若是则为true，不是为false
 	@Override
 	public void onUserAccountLogout(boolean fromUserCenter, int resultCode) {
 	}
@@ -247,8 +233,7 @@ mOpeCenter.setSupportExcess(support);
 mOpeCenter.login(MainActivity.this, new OnLoginFinishedListener() {
 
 	@Override
-	public void onLoginFinished(boolean success, int resultCode, User userInfo)
-	{
+	public void onLoginFinished(boolean success, int resultCode, User userInfo) {
 	    //登录结束后的游戏逻辑
 	}
 });
@@ -270,8 +255,7 @@ User user = mOpeCenter.getCurrentAccount();
 mOpeCenter.switchAccount(MainActivity.this, new OnLoginFinishedListener() {
 
 	@Override
-	public void onLoginFinished(boolean success, int resultCode, User userInfo)
-	{
+	public void onLoginFinished(boolean success, int resultCode, User userInfo) {
 	    //用户账号切换结束后的游戏逻辑
 	}
 });
@@ -288,13 +272,13 @@ mOpeCenter.logout();
 // 如果游戏已经配置游戏圈， 则在关闭前，SDK会弹出对话框询问“退出游戏”还是“前往游戏圈”
 // 如果还没有配置，SDK弹框会提示“退出游戏”还是“留在游戏”
 mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
-
 	@Override
 	public void onQuitGame(boolean shouldQuit) {
 		// 点击“退出游戏”时，shouldQuit为true，游戏处理自己的退出业务逻辑
 		// 点击“前往游戏圈”时，shouldQuit为false，SDK会进入游戏圈或者下载
 		// 	游戏盒子界面，游戏可以不做处理。
 		// 点击“留在游戏”时，shouldQuit为false，SDK和游戏都不做任何处理
+        // 点击右上角的关闭图标，shouldQuit为false，SDK和游戏都不做任何处理
 	}
 });
 ```
@@ -305,7 +289,7 @@ mOpeCenter.shouldQuitGame(MainActivity.this, new OnQuitGameListener() {
 boolean isLogin = mOpeCenter.isLogin();
 ```
 ## 获取缓存用户名列表
-当使用WEB版4399统一登录时，系统会记忆最多5次登录的用户名,用于下一次在登录界面提供用户候选。
+当使用网页方式登录时，系统会记忆最多5次登录的用户名, 用于下一次在登录界面提供用户候选（见于帐号名右边的下拉列表）。
 ```java
 String[] accounts = mOpeCenter.getCacheAccounts();
 ```
@@ -341,7 +325,7 @@ mOpeCenter.recharge(MainActivity.this,
 		public void onRechargeFinished(boolean success, int resultCode, String msg) {
 			if (success) {
 				//请求游戏服，获取充值结果
-			}else{
+			} else {
 				//充值失败逻辑
 			}
 		}
