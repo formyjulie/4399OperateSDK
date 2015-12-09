@@ -105,10 +105,10 @@ v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
 ```xml
         <!-- For 4399 recharging SDK. 请不要在此处修改RechargeActivity的方向设置，因为某些2。3的机型启动Activity总是先启动
           	竖屏，然后强制转换成横屏，这会导致潜在问题. -->
+        <!-- activity的配置不能少于orientation|screenSize|keyboardHidden，这些配置是为了防止Activity被系统或第三方界面强  
+        	拉成竖屏时，发生重建而加入的。SDK的Activity支持横屏或竖屏，但不支持横竖屏切换，否则会包初始化问题 -->
         <activity
             android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
-            <!--activity的配置不能少于orientation|screenSize|keyboardHidden，这些配置是为了防止Activity被系统或第三方界面强
-            拉成竖屏时，发生重建而加入的。SDK的Activity支持横屏或竖屏，但不支持横竖屏切换，否则会包初始化问题-->
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
             android:exported="true"
