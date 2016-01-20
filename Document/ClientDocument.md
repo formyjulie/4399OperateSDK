@@ -101,6 +101,10 @@ v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接�
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Alipay permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- YouYiFu permission -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
@@ -146,7 +150,7 @@ v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接�
             </intent-filter>
         </receiver>
             
-	<!--------以下为第三方支付SDK Activity&Service配置------------>
+        <!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
