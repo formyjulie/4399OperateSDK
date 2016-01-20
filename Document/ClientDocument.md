@@ -18,6 +18,7 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
 v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或接入请联系运营）  
 v2.5.0.0 |  2015-08-15  |   张生    |   补充游戏退出时的说明，修改关联资源工程处的错误说明，优化一些代码格式
 v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
+v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接入流程     
 #目录
 
 [1 文档说明](#文档说明)  
@@ -145,13 +146,31 @@ v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
             </intent-filter>
         </receiver>
             
-		<!--------以下为第三方支付SDK Activity&Service配置------------>
+	<!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!-- For YouYiFu -->
+        <activity
+            android:name="com.arcsoft.hpay100.HPaySdkActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="behind"
+            android:theme="@style/hpay_dialog_style" >
+        </activity>
+        <activity
+            android:name="com.arcsoft.hpay100.web.HPayWebActivity"
+            android:screenOrientation="behind"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@style/hpay_custom_confim_dialog" >
+        </activity>
+        <activity
+            android:name="com.arcsoft.hpay100.web.HPayWebFullActivity"
+            android:screenOrientation="behind"
+            android:configChanges="keyboardHidden|screenSize|orientation" >
+        </activity>
 ```
 * 注：第三方支付SDK的Activity需在AndroidManifest.xml中强制配置横竖屏，请游戏方根据游戏的横竖屏要求手工配置`landscape`|`portrait`  
 * 游戏Activity的配置不能少于orientation|screenSize|keyboardHidden这三项，这些配置是为了防止Activity被系统或第三方界面强
@@ -166,7 +185,8 @@ v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
 -keep class android.support.v4.** { *; }
 -keep public class * extends android.support.v4.**
 
--dontwarn com.unipay.**
+-dontwarn com.arcsoft.hpay100.**
+-keep class com.arcsoft.hpay100.**{*;}
 -keep class cn.m4399.operate.** {*;}
 -keep class cn.m4399.recharge.** {*;}
 -keepclassmembers class cn.m4399.recharge.R$* {*;}
