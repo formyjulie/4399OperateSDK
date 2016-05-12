@@ -18,7 +18,8 @@ v2.4.2.1 |  2015-06-16  |   张生    |   增加短代退费功能，升级支�
 v2.4.3.0 |  2015-07-20  |   张生    |   新增微信充值（如需测试或接入请联系运营）  
 v2.5.0.0 |  2015-08-15  |   张生    |   补充游戏退出时的说明，修改关联资源工程处的错误说明，优化一些代码格式
 v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
-v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接入流程     
+v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接入流程   
+v2.7.1.0 |  2016-05-12  |   张生    |   移除AndroidManifest里launchMode配置  
 #目录
 
 [1 文档说明](#文档说明)  
@@ -115,7 +116,6 @@ v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接�
         <activity
             android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask"
             android:exported="true"
             android:theme="@style/m4399ActivityTheme" />
 
@@ -123,17 +123,14 @@ v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接�
         <activity
             android:name="cn.m4399.operate.ui.activity.LoginActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask"
             android:theme="@style/m4399TransparentStyle" />
         <activity
             android:name="cn.m4399.operate.ui.activity.UserCenterActivity"
             android:hardwareAccelerated="false"
-            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
-            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
