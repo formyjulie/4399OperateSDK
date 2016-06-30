@@ -20,6 +20,7 @@ v2.5.0.0 |  2015-08-15  |   张生    |   补充游戏退出时的说明，修�
 v2.6.0.4 |  2015-10-30	|   张生    |   增加微信接入的说明
 v2.7.0.2 |  2016-01-20  |   张生    |   为新渠道‘优易付’修改接入流程   
 v2.7.1.0 |  2016-05-12  |   张生    |   移除AndroidManifest里launchMode配置  
+v2.8.0.2 |  2016-06-30  |   张生    |   更新AndroidManifest组件配置，和proguard配置  
 #目录
 
 [1 文档说明](#文档说明)  
@@ -87,32 +88,37 @@ v2.7.1.0 |  2016-05-12  |   张生    |   移除AndroidManifest里launchMode配�
 - 添加SDK所需的权限
 ``` xml
     <!-- Common permission -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <!-- For Dial custom service hotline -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- For Dial 4399 hotline -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <!-- SMS pay permission -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <!-- Alipay permission -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- YouYiFu permission -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
 ```
 - 注册SDK相关Activity&Service，注意必须放入`<application>`元素区块内
 ```xml
+	<!--6.0系统授权辅助Actiivty-->
+        <activity
+            android:name="cn.m4399.common.permission.AuthActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/m4399PermissionActivityStyle" />
+            
         <!-- For 4399 recharging SDK. 请不要在此处修改RechargeActivity的方向设置，因为某些2。3的机型启动Activity总是先启动
           	竖屏，然后强制转换成横屏，这会导致潜在问题. -->
         <!-- activity的配置不能少于orientation|screenSize|keyboardHidden，这些配置是为了防止Activity被系统或第三方界面强  
         	拉成竖屏时，发生重建而加入的。SDK的Activity支持横屏或竖屏，但不支持横竖屏切换，否则会包初始化问题 -->
+            
         <activity
             android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -133,19 +139,6 @@ v2.7.1.0 |  2016-05-12  |   张生    |   移除AndroidManifest里launchMode配�
             android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <service
-            android:name="cn.m4399.recharge.service.smsm.SmsmService"
-            android:enabled="true"
-            android:exported="false"
-            android:process="system" >
-        </service>
-
-        <receiver android:name="cn.m4399.recharge.service.smsm.SmsmStartReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
             
         <!--------以下为第三方支付SDK Activity&Service配置------------>
         <activity
@@ -190,7 +183,10 @@ v2.7.1.0 |  2016-05-12  |   张生    |   移除AndroidManifest里launchMode配�
 -keep class com.arcsoft.hpay100.**{*;}
 -keep class cn.m4399.operate.** {*;}
 -keep class cn.m4399.recharge.** {*;}
+-dontwarn cn.m4399.operate.**
+-dontwarn cn.m4399.recharge.**
 -keepclassmembers class cn.m4399.recharge.R$* {*;}
+-dontskipnonpubliclibraryclassmembers
 ```
 # 接入流程
 ## 初始化
